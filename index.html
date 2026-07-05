@@ -301,7 +301,8 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .nav-right,.ncta{display:none}.hbg{display:flex}
   .g3,.ggrid,.ct-grid,.svcs-grid,.phil-pillars{grid-template-columns:1fr}
   .hero-in,.prob-in,.ab-in{grid-template-columns:1fr}
-  .hero-in{min-height:auto;padding:48px 0 52px}
+  .hero-in{min-height:auto;padding:0}
+  .hl{padding:48px 0 44px}
   .fg-grid{grid-template-columns:1fr 1fr}
   .sb-in,.sb-in.flip{grid-template-columns:1fr;direction:ltr}
   .sbvis{position:static}
@@ -312,7 +313,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .phil-in{text-align:left}
   .prob,.phil{padding:56px 6%}
   .sb{padding:60px 6%}
-  .mp-list{grid-template-columns:1fr;overflow-x:visible}
+  .mp-list{grid-template-columns:1fr !important;overflow:visible}
   .mp-item:nth-child(odd){border-right:none}
   .mp-item:nth-last-child(-n+2){border-bottom:1px solid var(--bd)}
   .mp-item:last-child{border-bottom:none}
@@ -482,7 +483,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <li><a onclick="go('home')" data-p="home" class="active">Home</a></li>
       <li><a onclick="go('services')" data-p="services">Services</a></li>
       <li><a onclick="go('how')" data-p="how">How We Work</a></li>
-      <li><a onclick="go('about')" data-p="about">About</a></li>
       <li><a onclick="go('contact')" data-p="contact">Contact</a></li>
     </ul>
     <button class="ncta" onclick="go('contact')">Free Consultation</button>
@@ -493,7 +493,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <a onclick="go('home');toggleNav()">Home</a>
   <a onclick="go('services');toggleNav()">Services</a>
   <a onclick="go('how');toggleNav()">How We Work</a>
-  <a onclick="go('about');toggleNav()">About</a>
   <a onclick="go('contact');toggleNav()">Contact</a>
   <button onclick="go('contact');toggleNav()" class="mc">Get Free Consultation</button>
 </div>
@@ -554,7 +553,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
         <blockquote>"Someone searched for exactly what you offer on Google yesterday. They found your competitor because your site loaded in 6 seconds and had no SEO."</blockquote>
         <p>A beautiful website that nobody finds is a brochure sitting in a drawer. A website that ranks on Google but confuses visitors is a leaky funnel. You need both, and that is exactly what we build.</p>
         <div class="prob-cta">
-          <button class="btn btol" onclick="go('about')">Read Our Story</button>
         </div>
       </div>
       <div class="fu">
@@ -1149,50 +1147,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 <!-- END HOW WE WORK -->
 
 <!-- ==================== ABOUT ==================== -->
-<div class="page" id="page-about">
-  <div class="ab-hero">
-    <div class="ab-in inn">
-      <div class="fu">
-        <span class="sl" style="margin-bottom:16px">Our Story</span>
-        <h1>Being the best at what you do means nothing if the <em class="hi">right people cannot find you.</em></h1>
-        <p>We exist to close that gap. Every business we work with has real quality behind it. Our job is to make sure the internet reflects that.</p>
-      </div>
-      <div class="abvis fu">
-        <div class="abq">"A great website that nobody can find is a brochure sitting in a drawer. We fix that."</div>
-      </div>
-    </div>
-  </div>
-
-  <section class="sec" style="background:#fff">
-    <div class="inn story-in fu">
-      <span class="sl" style="margin-bottom:20px">Why HelpLaunch</span>
-      <p>Most web agencies hand over a completed website and disappear. The site looks good, but three months later it still ranks nowhere on Google and generates no enquiries. <strong>The design was never the problem. It was the strategy.</strong></p>
-      <p>We started HelpLaunch because we saw too many business owners paying for beautiful websites that did not work. A website without SEO is invisible. A website with SEO but poor UX does not convert. You need both, built together from the start.</p>
-      <div class="spull">"Your website should answer your customer's question before they even think to ask it. That is what great UX and SEO, done right, actually look like."</div>
-      <p>Everything we do is connected to one question: <strong>will this bring more enquiries to this business?</strong> If the answer is not clearly yes, we do not recommend it.</p>
-      <p>We also believe in earning trust before asking for it. That is why every engagement starts with a free audit. You see exactly where your website is losing customers before you spend a single rupee with us.</p>
-    </div>
-  </section>
-
-  <section class="sec" style="background:var(--wg)">
-    <div class="inn">
-      <div class="sh fu"><span class="sl">Our Values</span><h2>What we believe <em class="hi">shapes how we work</em></h2></div>
-      <div class="vgrid fu">
-        <div class="vc"><div class="vn">01</div><h3>Performance First</h3><p>A slow website is not a design problem, it is a business problem. Every site we build is optimised for speed, Core Web Vitals and mobile experience before anything else.</p></div>
-        <div class="vc"><div class="vn">02</div><h3>SEO Is Not an Afterthought</h3><p>SEO is built into every page from day one, not bolted on later. Site structure, content and technical setup are all designed with search in mind from the start.</p></div>
-        <div class="vc"><div class="vn">03</div><h3>UX and Conversion Together</h3><p>We do not just design. We design to convert. Every CTA, headline and page layout is considered through the lens of: will this turn a visitor into a customer?</p></div>
-        <div class="vc"><div class="vn">04</div><h3>Radical Transparency</h3><p>You always know what we are doing and why. Monthly reports with real data, no vague updates, no hiding behind jargon and no excuses.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ctab">
-    <h2>Want to work with us?</h2>
-    <p>Start with a free website audit. No commitment required, just useful insight into your current digital presence.</p>
-    <div class="acts"><button class="btn bto" onclick="go('contact')">Get My Free Audit</button></div>
-  </div>
-</div>
-<!-- END ABOUT -->
 
 <!-- ==================== CONTACT ==================== -->
 <div class="page" id="page-contact">
@@ -1222,16 +1176,16 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
         <div class="cfh"><h3>Get Your Free Website Audit</h3><p>Share your website URL and we will get back to you within 24 hours with specific findings.</p></div>
         <form onsubmit="submitForm(event)">
           <div class="frow">
-            <div class="fg"><label>Your Name</label><input type="text" placeholder="Ramesh Sharma" required></div>
-            <div class="fg"><label>Business Name</label><input type="text" placeholder="Sharma and Co." required></div>
+            <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Ramesh Sharma" required></div>
+            <div class="fg"><label>Business Name</label><input type="text" name="business" placeholder="Sharma and Co." required></div>
           </div>
           <div class="frow">
-            <div class="fg"><label>Phone or WhatsApp</label><input type="tel" placeholder="+91 98765 43210" required></div>
-            <div class="fg"><label>City</label><input type="text" placeholder="Pune" required></div>
+            <div class="fg"><label>Phone or WhatsApp</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
+            <div class="fg"><label>City</label><input type="text" name="city" placeholder="Pune" required></div>
           </div>
-          <div class="fg"><label>Current Website URL</label><input type="url" placeholder="https://yourbusiness.com" required></div>
+          <div class="fg"><label>Current Website URL</label><input type="text" name="website" placeholder="https://yourbusiness.com (leave blank if you don't have one)"></div>
           <div class="fg"><label>What is your main goal?</label>
-            <select>
+            <select name="goal">
               <option value="">Select your main goal...</option>
               <option>My website is slow or outdated</option>
               <option>I am not ranking on Google</option>
@@ -1240,7 +1194,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               <option>I want a full digital growth plan</option>
             </select>
           </div>
-          <div class="fg"><label>Anything else to share?</label><textarea placeholder="e.g. We have traffic but our bounce rate is 80% and nobody fills the contact form..."></textarea></div>
+          <div class="fg"><label>Anything else to share?</label><textarea name="message" placeholder="e.g. We have traffic but our bounce rate is 80% and nobody fills the contact form..."></textarea></div>
           <button type="submit" class="fsub">Send My Free Audit Request</button>
           <div class="smsg" id="smsg"><p>Received! We will review your site and get back to you within 24 hours.</p></div>
         </form>
@@ -1286,7 +1240,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
     <div class="fc">
       <h5>Company</h5>
       <ul>
-        <li><a onclick="go('about')">About Us</a></li>
         <li><a onclick="go('how')">How We Work</a></li>
         <li><a onclick="go('contact')">Contact</a></li>
       </ul>
@@ -1312,8 +1265,19 @@ function toggleNav(){
 }
 function submitForm(e){
   e.preventDefault();
-  document.getElementById('smsg').classList.add('show');
-  e.target.reset();
+  const form=e.target;
+  const btn=form.querySelector('.fsub');
+  btn.disabled=true;btn.textContent='Sending…';
+  fetch('https://formspree.io/f/meebnzbr',{
+    method:'POST',body:new FormData(form),headers:{Accept:'application/json'}
+  }).then(r=>{
+    if(r.ok){document.getElementById('smsg').classList.add('show');form.reset();}
+    else{alert('Something went wrong. Please WhatsApp us instead.');}
+    btn.disabled=false;btn.textContent='Send My Free Audit Request';
+  }).catch(()=>{
+    alert('Network error. Please WhatsApp us instead.');
+    btn.disabled=false;btn.textContent='Send My Free Audit Request';
+  });
 }
 const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{
