@@ -300,13 +300,23 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 @media(max-width:920px){
   .nav-right,.ncta{display:none}.hbg{display:flex}
   .g3,.ggrid,.ct-grid,.svcs-grid,.phil-pillars{grid-template-columns:1fr}
-  .hero-in,.prob-in,.ab-in{grid-template-columns:1fr}
-  .hero-in{min-height:auto;padding:0}
-  .hl{padding:48px 0 44px}
+  .hero-in,.prob-in,.ab-in{grid-template-columns:1fr;gap:0}
+  .hero-in{min-height:auto;padding:0;gap:0}
+  .hl{padding:48px 0 0}
+  .hbtns{margin-bottom:0}
   .fg-grid{grid-template-columns:1fr 1fr}
   .sb-in,.sb-in.flip{grid-template-columns:1fr;direction:ltr}
   .sbvis{position:static}
-  .hvc,.fc1,.fc2,.abvis,.hvo{display:none}
+  .fc1,.fc2,.abvis{display:none}
+  .hvo{position:static !important;padding:0 !important;margin-top:20px;margin-bottom:28px}
+  .hvc{padding:10px 12px;border-radius:12px}
+  .hvc > p{font-size:.58rem;margin-bottom:6px;letter-spacing:.07em}
+  .hvc-row{gap:5px}
+  .hvc-s{padding:5px 8px;font-size:.68rem;border-radius:7px;flex:1}
+  .hvc-m{padding:8px 10px;border-radius:8px;margin-top:6px}
+  .hvc-m .ml{font-size:.62rem}
+  .hvc-m .mv{font-size:.82rem;font-weight:700}
+  .mbadge{font-size:.58rem;padding:2px 7px}
   .comp-in{overflow-x:auto}
   .ctbl{min-width:560px}
   .phero{padding:52px 6% 60px;clip-path:none}
@@ -321,13 +331,14 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .proc-sticky{display:none}
 }
 @media(max-width:640px){
+  .logo img{height:52px !important}
+  .hl{padding:28px 0 0}
   .sec{padding:44px 5%}
   .prob,.phil{padding:44px 5%}
   .sb{padding:48px 5%}
   .g2,.sp-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .fg-grid{grid-template-columns:1fr}
-  .hl{padding:36px 0 24px}
   .svcs-grid{grid-template-columns:1fr}
   .hero h1{font-size:1.65rem;line-height:1.22}
   h2{font-size:1.35rem}
@@ -511,7 +522,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       </div>
       <div class="fu hvo" style="position:relative;padding:80px 0">
         <div class="hvc">
-          <p style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:12px;">Your Digital Presence, Fully Built</p>
+          <p style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:12px;white-space:nowrap">Your Digital Presence, Fully Built</p>
           <div class="hvc-row"><div class="hvc-s">🌐 Website</div><div class="hvc-s">🎨 UX/UI</div></div>
           <div class="hvc-row"><div class="hvc-s">🔎 SEO</div><div class="hvc-s">📈 Analytics</div></div>
           <div class="hvc-row"><div class="hvc-s">⭐ Reputation</div><div class="hvc-s">🗂️ CRM</div></div>
