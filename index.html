@@ -141,7 +141,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 /* Problem */
 .prob{background:#fff;padding:80px 6%}
 .prob-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.prob-text blockquote{font-size:1.35rem;font-weight:700;color:var(--ch);line-height:1.5;border-left:4px solid var(--o);padding-left:20px;margin:24px 0;font-style:normal}
+.prob-text blockquote{font-size:1.1rem;font-weight:700;color:var(--ch);line-height:1.55;border-left:4px solid var(--o);padding-left:20px;margin:24px 0;font-style:normal}
 .prob-text p{margin-bottom:16px;font-size:.95rem}
 .prob-text .prob-cta{margin-top:32px}
 .vs-c{border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
@@ -301,65 +301,83 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .nav-right,.ncta{display:none}.hbg{display:flex}
   .g3,.ggrid,.ct-grid,.svcs-grid,.phil-pillars{grid-template-columns:1fr}
   .hero-in,.prob-in,.ab-in{grid-template-columns:1fr}
-  .hero-in{min-height:auto;padding:52px 0 60px} /* remove dead space when visual is hidden */
+  .hero-in{min-height:auto;padding:48px 0 52px}
   .fg-grid{grid-template-columns:1fr 1fr}
   .sb-in,.sb-in.flip{grid-template-columns:1fr;direction:ltr}
   .sbvis{position:static}
   .hvc,.fc1,.fc2,.abvis{display:none}
   .comp-in{overflow-x:auto}
   .ctbl{min-width:560px}
-  .phero{padding:56px 6% 68px;clip-path:none} /* clip-path looks bad on narrow screens */
+  .phero{padding:52px 6% 60px;clip-path:none}
   .phil-in{text-align:left}
-  .mp-list{grid-template-columns:1fr}
+  .prob,.phil{padding:56px 6%}
+  .sb{padding:60px 6%}
+  .mp-list{grid-template-columns:1fr;overflow-x:visible}
   .mp-item:nth-child(odd){border-right:none}
   .mp-item:nth-last-child(-n+2){border-bottom:1px solid var(--bd)}
   .mp-item:last-child{border-bottom:none}
+  .proc-layout{grid-template-columns:1fr}
+  .proc-sticky{display:none}
 }
 @media(max-width:640px){
-  .sec{padding:52px 5%}
+  .sec{padding:44px 5%}
+  .prob,.phil{padding:44px 5%}
+  .sb{padding:48px 5%}
   .g2,.sp-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .fg-grid{grid-template-columns:1fr}
-  .hl{padding:40px 0 28px}
-  .svcs-grid{grid-template-columns:1fr 1fr}
-  .hero h1{font-size:1.75rem;line-height:1.22}
-  h2{font-size:1.4rem}
-  .hbtns{flex-direction:column;align-items:flex-start}
+  .hl{padding:36px 0 24px}
+  .svcs-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.65rem;line-height:1.22}
+  h2{font-size:1.35rem}
+  .hbtns{flex-direction:column;align-items:stretch}
   .hbtns .btn{width:100%;justify-content:center;text-align:center}
-  .ctab{padding:52px 5%}
+  .ctab{padding:44px 5%}
   .ctab .acts{flex-direction:column;align-items:center}
   .ctab .acts .btn{width:100%;max-width:340px;justify-content:center}
-  .sbh h2{font-size:1.3rem}
-  .sbic{width:46px;height:46px;font-size:1.3rem}
-  .pstep{grid-template-columns:44px 1fr;gap:16px}
-  .pnode{width:44px;height:44px;font-size:.95rem}
-  .ticker .track{gap:36px}
+  .sbh h2{font-size:1.2rem}
+  .sbic{width:42px;height:42px;font-size:1.2rem}
+  .pstep{grid-template-columns:40px 1fr;gap:14px}
+  .pnode{width:40px;height:40px;font-size:.9rem}
+  .ticker .track{gap:32px}
   .mr strong{font-size:.82rem}
   .mbg{font-size:.68rem;padding:2px 8px}
-  .cfw{padding:24px 20px}
-  .cfh h3{font-size:1rem}
-  .phero h1{font-size:1.55rem}
-  .phero p{font-size:.95rem}
-  .wa{width:46px;height:46px;font-size:1.3rem;bottom:16px;right:16px}
-  /* Before/After: images bigger when stacked */
-  .ba-img-wrap img,.ba-placeholder{height:200px}
-  /* Carousel tap targets */
-  .bc-btn{width:36px;height:36px;font-size:1.25rem}
+  .cfw{padding:20px 16px}
+  .cfh h3{font-size:.95rem}
+  .phero h1{font-size:1.45rem}
+  .phero p{font-size:.9rem}
+  .phero{padding:44px 5% 52px}
+  .wa{width:44px;height:44px;font-size:1.25rem;bottom:14px;right:14px}
+  .prob-text blockquote{font-size:.95rem;padding-left:14px}
+  .prob-text p{font-size:.88rem}
+  /* Services deep-dive */
+  .sr-grid{gap:8px}
+  .sr-num{font-size:1.3rem}
+  .sr-card{padding:12px 8px}
+  /* Before/After */
+  .ba-grid{grid-template-columns:1fr}
+  .ba-img-wrap img,.ba-placeholder{height:190px}
+  /* Carousel */
+  .bc-btn{width:36px;height:36px;font-size:1.2rem}
   .bc-count{font-size:.7rem}
-  /* Monthly partner compact */
-  .mp-item{padding:13px 14px;gap:10px}
-  .mp-icon{font-size:1.1rem;width:26px}
-  .mp-freq{font-size:.62rem;padding:2px 8px}
-  /* What changed tags */
-  .bct{font-size:.7rem;padding:3px 10px}
-  /* Lightbox mobile */
+  /* Monthly partner */
+  .mp-item{padding:12px 14px;gap:10px}
+  .mp-icon{font-size:1.05rem;width:24px}
+  .mp-freq{font-size:.62rem;padding:2px 7px}
+  /* What changed */
+  .bct{font-size:.68rem;padding:3px 9px}
+  /* Lightbox */
   #lbx{padding:8px}
   .lbx-box{max-height:96vh;border-radius:12px}
-  .lbx-head{padding:11px 14px;gap:8px;flex-wrap:nowrap}
-  .lbx-title{font-size:.7rem;letter-spacing:.04em}
-  .lbx-nav,.lbx-close{width:30px;height:30px;font-size:1rem}
+  .lbx-head{padding:10px 12px;gap:6px}
+  .lbx-title{font-size:.68rem;letter-spacing:.03em}
+  .lbx-nav,.lbx-close{width:28px;height:28px;font-size:.95rem}
   .lbx-body{padding:10px}
   .lbx-body img{max-height:78vh;border-radius:6px}
+  /* How We Work process steps */
+  .pstep:not(:last-child)::after{left:19px;top:44px}
+  /* Stat cards stacked on mobile */
+  .proc-glance{display:none}
 }
 
 /* ── BEFORE / AFTER LIGHTBOX ── */
@@ -383,6 +401,35 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 .ba-footer{padding:14px 24px;background:var(--wg);border-top:1px solid var(--bd)}
 .ba-footer p{font-size:.82rem;color:var(--mu);margin:0}
 .ba-footer strong{color:var(--ch)}
+/* Process 2-col layout */
+.proc-layout{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start}
+.proc-sticky{position:sticky;top:90px;display:flex;flex-direction:column;gap:16px}
+.proc-glance{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:26px;box-shadow:var(--sh)}
+.proc-glance-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);margin-bottom:18px}
+.pg-step{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.pg-step:last-child{border:none;padding-bottom:0}
+.pg-num{width:26px;height:26px;border-radius:50%;background:var(--ol);color:var(--od);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pg-txt strong{display:block;font-size:.84rem;font-weight:700;color:var(--ch);line-height:1.3}
+.pg-txt span{font-size:.74rem;color:var(--mu)}
+.pg-badge{display:inline-block;font-size:.62rem;font-weight:800;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.pg-badge.free{background:var(--gl);color:var(--g)}
+.pg-badge.fast{background:var(--ol);color:var(--od)}
+.proc-cta-card{background:linear-gradient(135deg,var(--o),var(--od));border-radius:16px;padding:22px;text-align:center}
+.proc-cta-card p{color:rgba(255,255,255,.8);font-size:.82rem;margin-bottom:14px;line-height:1.5}
+.proc-cta-card button{background:#fff;color:var(--o);border:none;border-radius:99px;padding:10px 22px;font-family:inherit;font-size:.88rem;font-weight:800;cursor:pointer;width:100%;transition:transform .15s,box-shadow .15s}
+.proc-cta-card button:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+@media(max-width:920px){.proc-layout{grid-template-columns:1fr}.proc-sticky{display:none}}
+/* Stat result cards (service 01 experiment) */
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.sr-card{background:var(--wg);border:1px solid var(--bd);border-radius:12px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.sr-icon{font-size:1.3rem;line-height:1;margin-bottom:2px}
+.sr-num{font-size:1.55rem;font-weight:800;line-height:1}
+.sr-num.or{color:var(--o)}
+.sr-num.gr{color:var(--g)}
+.sr-lbl{font-size:.68rem;color:var(--mu);font-weight:600;line-height:1.35;text-align:center}
+.sr-badge{display:inline-block;font-size:.62rem;font-weight:800;padding:2px 8px;border-radius:99px;margin-top:2px}
+.sr-badge.gu{background:var(--ol);color:var(--od)}
+.sr-badge.up{background:var(--gl);color:var(--g)}
 /* What Changed tags */
 .ba-changes{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
 .bct{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--ol);color:var(--o);border:1px solid rgba(249,115,22,.18);white-space:nowrap}
@@ -425,7 +472,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 </head>
 <body>
 
-<a href="https://wa.me/91XXXXXXXXXX" class="wa" title="WhatsApp" target="_blank" rel="noopener">💬</a>
+<a href="https://wa.me/918291649511" class="wa" title="WhatsApp" target="_blank" rel="noopener">💬</a>
 
 <!-- NAV -->
 <nav>
@@ -616,10 +663,32 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       </div>
       <div class="sbvis fu">
         <h4>Typical Results</h4>
-        <div class="mr"><span>Go-Live Time</span><strong>7 Working Days</strong><span class="mbg gu">Guaranteed</span></div>
-        <div class="mr"><span>PageSpeed Score</span><strong>80 or above</strong><span class="mbg gu">Guaranteed</span></div>
-        <div class="mr"><span>Mobile Optimised</span><strong>100%</strong><span class="mbg up">Always</span></div>
-        <div class="mr"><span>Enquiries in First Month</span><strong>35% to 80% uplift</strong><span class="mbg up">Avg.</span></div>
+        <div class="sr-grid">
+          <div class="sr-card">
+            <span class="sr-icon">⚡</span>
+            <div class="sr-num or">7 Days</div>
+            <div class="sr-lbl">Go-Live Time</div>
+            <span class="sr-badge gu">Guaranteed</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">🚀</span>
+            <div class="sr-num or">80+</div>
+            <div class="sr-lbl">PageSpeed Score</div>
+            <span class="sr-badge gu">Guaranteed</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">📱</span>
+            <div class="sr-num gr">100%</div>
+            <div class="sr-lbl">Mobile Optimised</div>
+            <span class="sr-badge up">Always</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">📈</span>
+            <div class="sr-num gr">+80%</div>
+            <div class="sr-lbl">Enquiries, First Month</div>
+            <span class="sr-badge up">Avg.</span>
+          </div>
+        </div>
         <div class="gpill"><span>🔏</span><p>Website live within 7 working days of content handoff. If we miss it, we add one month of free maintenance.</p></div>
       </div>
     </div>
@@ -644,10 +713,32 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       </div>
       <div class="sbvis fu">
         <h4>Typical Results</h4>
-        <div class="mr"><span>Bounce Rate Reduction</span><strong>15% to 40%</strong><span class="mbg up">Avg.</span></div>
-        <div class="mr"><span>Conversion Rate Lift</span><strong>25% to 60%</strong><span class="mbg up">Avg.</span></div>
-        <div class="mr"><span>PageSpeed Improvement</span><strong>20 to 50 points</strong><span class="mbg up">Typical</span></div>
-        <div class="mr"><span>Audit Delivery</span><strong>Within 5 Days</strong><span class="mbg gu">Guaranteed</span></div>
+        <div class="sr-grid">
+          <div class="sr-card">
+            <span class="sr-icon">📉</span>
+            <div class="sr-num gr">-40%</div>
+            <div class="sr-lbl">Bounce Rate Reduction</div>
+            <span class="sr-badge up">Avg.</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">🎯</span>
+            <div class="sr-num gr">+60%</div>
+            <div class="sr-lbl">Conversion Rate Lift</div>
+            <span class="sr-badge up">Avg.</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">⚡</span>
+            <div class="sr-num or">+50pts</div>
+            <div class="sr-lbl">PageSpeed Improvement</div>
+            <span class="sr-badge up">Typical</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">📋</span>
+            <div class="sr-num or">5 Days</div>
+            <div class="sr-lbl">Audit Delivery</div>
+            <span class="sr-badge gu">Guaranteed</span>
+          </div>
+        </div>
         <div class="gpill"><span>💡</span><p>A UX fix costs far less than buying more traffic to a site that does not convert.</p></div>
       </div>
     </div>
@@ -673,9 +764,26 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       </div>
       <div class="sbvis fu">
         <h4>What to Expect</h4>
-        <div class="mr"><span>First Ranking Improvements</span><strong>Within 60 to 90 days</strong><span class="mbg up">Avg.</span></div>
-        <div class="mr"><span>Organic Traffic Growth</span><strong>40% to 120% uplift</strong><span class="mbg up">6 months</span></div>
-        <div class="mr"><span>Keywords Tracked Monthly</span><strong>20 to 50 keywords</strong><span class="mbg gu">Included</span></div>
+        <div class="sr-grid">
+          <div class="sr-card">
+            <span class="sr-icon">📅</span>
+            <div class="sr-num or">60–90</div>
+            <div class="sr-lbl">Days to First Rankings</div>
+            <span class="sr-badge up">Avg.</span>
+          </div>
+          <div class="sr-card">
+            <span class="sr-icon">📈</span>
+            <div class="sr-num gr">+120%</div>
+            <div class="sr-lbl">Organic Traffic Growth</div>
+            <span class="sr-badge up">6 months</span>
+          </div>
+          <div class="sr-card" style="grid-column:1/-1">
+            <span class="sr-icon">🔑</span>
+            <div class="sr-num or">20–50</div>
+            <div class="sr-lbl">Keywords Tracked Monthly</div>
+            <span class="sr-badge gu">Included</span>
+          </div>
+        </div>
         <div class="gpill"><span>🔏</span><p>SEO compounds over time. Clients who start early see results for years without ongoing ad spend.</p></div>
       </div>
     </div>
@@ -770,60 +878,111 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <section class="sec" style="background:#fff">
     <div class="inn">
       <div class="sh fu" style="max-width:640px"><span class="sl">Our Process</span><h2>From audit to live site, <em class="hi">clear at every step.</em></h2></div>
-      <div style="max-width:680px">
-        <div class="pstep fu">
-          <div class="pnode">1</div>
-          <div class="pbody">
-            <h3>Free Website and SEO Audit</h3>
-            <p>Before we ever contact you, we review your existing website covering speed, UX, on-page SEO, mobile experience, conversion bottlenecks and keyword gaps. You receive a clear report with specific findings.</p>
-            <div class="audit-chips">
-              <span class="audit-chip">PageSpeed</span>
-              <span class="audit-chip">Core Web Vitals</span>
-              <span class="audit-chip">On-page SEO</span>
-              <span class="audit-chip">Mobile UX</span>
-              <span class="audit-chip">CTAs and Navigation</span>
-              <span class="audit-chip">Keyword Gaps</span>
-              <span class="audit-chip">Competitor Benchmarking</span>
-            </div>
-            <div class="pnote">⚡ Completely free. No obligation whatsoever.</div>
-          </div>
-        </div>
-        <div class="pstep fu">
-          <div class="pnode">2</div>
-          <div class="pbody">
-            <h3>Share the Audit With You</h3>
-            <p>We send you the full audit report. You see exactly where the issues are, covering speed problems, UX friction and SEO gaps, before a single rupee is involved. It is useful to you regardless of whether we work together.</p>
-          </div>
-        </div>
-        <div class="pstep fu">
-          <div class="pnode">3</div>
-          <div class="pbody">
-            <h3>Discovery Call — 30 Minutes</h3>
-            <p>A focused call to understand your business, target audience, competitors and what success looks like for you. No pitch, just listening and asking the right questions.</p>
-            <div class="pchips">
-              <span class="pchip">Target audience</span>
-              <span class="pchip">Key pages and goals</span>
-              <span class="pchip">Top keywords</span>
-              <span class="pchip">Competitors</span>
-              <span class="pchip">Budget and timeline</span>
+      <div class="proc-layout">
+
+        <!-- STEPS -->
+        <div>
+          <div class="pstep fu">
+            <div class="pnode">1</div>
+            <div class="pbody">
+              <h3>Free Website and SEO Audit</h3>
+              <p>Before we ever contact you, we review your existing website covering speed, UX, on-page SEO, mobile experience, conversion bottlenecks and keyword gaps. You receive a clear report with specific findings.</p>
+              <div class="audit-chips">
+                <span class="audit-chip">PageSpeed</span>
+                <span class="audit-chip">Core Web Vitals</span>
+                <span class="audit-chip">On-page SEO</span>
+                <span class="audit-chip">Mobile UX</span>
+                <span class="audit-chip">CTAs and Navigation</span>
+                <span class="audit-chip">Keyword Gaps</span>
+                <span class="audit-chip">Competitor Benchmarking</span>
+              </div>
+              <div class="pnote">⚡ Completely free. No obligation whatsoever.</div>
             </div>
           </div>
-        </div>
-        <div class="pstep fu">
-          <div class="pnode">4</div>
-          <div class="pbody">
-            <h3>Custom Proposal</h3>
-            <p>A tailored scope document with specific deliverables, timelines and expected outcomes. Not a generic package. Every proposal is built for your specific business and goals.</p>
+          <div class="pstep fu">
+            <div class="pnode">2</div>
+            <div class="pbody">
+              <h3>Share the Audit With You</h3>
+              <p>We send you the full audit report. You see exactly where the issues are, covering speed problems, UX friction and SEO gaps, before a single rupee is involved. It is useful to you regardless of whether we work together.</p>
+            </div>
+          </div>
+          <div class="pstep fu">
+            <div class="pnode">3</div>
+            <div class="pbody">
+              <h3>Discovery Call — 30 Minutes</h3>
+              <p>A focused call to understand your business, target audience, competitors and what success looks like for you. No pitch, just listening and asking the right questions.</p>
+              <div class="pchips">
+                <span class="pchip">Target audience</span>
+                <span class="pchip">Key pages and goals</span>
+                <span class="pchip">Top keywords</span>
+                <span class="pchip">Competitors</span>
+                <span class="pchip">Budget and timeline</span>
+              </div>
+            </div>
+          </div>
+          <div class="pstep fu">
+            <div class="pnode">4</div>
+            <div class="pbody">
+              <h3>Custom Proposal</h3>
+              <p>A tailored scope document with specific deliverables, timelines and expected outcomes. Not a generic package. Every proposal is built for your specific business and goals.</p>
+            </div>
+          </div>
+          <div class="pstep fu">
+            <div class="pnode">5</div>
+            <div class="pbody">
+              <h3>Build, Optimise and Grow</h3>
+              <p>We execute the plan and send you a clear monthly report covering keyword rankings, traffic, page speed and lead volume. You stay informed without needing to understand any of the technical detail.</p>
+              <div class="pnote">📊 Monthly report covers keyword rankings, traffic, speed scores and leads generated.</div>
+            </div>
           </div>
         </div>
-        <div class="pstep fu">
-          <div class="pnode">5</div>
-          <div class="pbody">
-            <h3>Build, Optimise and Grow</h3>
-            <p>We execute the plan and send you a clear monthly report covering keyword rankings, traffic, page speed and lead volume. You stay informed without needing to understand any of the technical detail.</p>
-            <div class="pnote">📊 Monthly report covers keyword rankings, traffic, speed scores and leads generated.</div>
+
+        <!-- STICKY SIDEBAR -->
+        <div class="proc-sticky">
+          <div class="proc-glance fu">
+            <div class="proc-glance-title">Your journey at a glance</div>
+            <div class="pg-step">
+              <div class="pg-num">1</div>
+              <div class="pg-txt">
+                <strong>Free Audit <span class="pg-badge free">Free</span></strong>
+                <span>Speed, SEO, UX — full report, no charge</span>
+              </div>
+            </div>
+            <div class="pg-step">
+              <div class="pg-num">2</div>
+              <div class="pg-txt">
+                <strong>Audit Shared With You</strong>
+                <span>See every issue before spending anything</span>
+              </div>
+            </div>
+            <div class="pg-step">
+              <div class="pg-num">3</div>
+              <div class="pg-txt">
+                <strong>Discovery Call <span class="pg-badge fast">30 min</span></strong>
+                <span>We listen, no pitch, no pressure</span>
+              </div>
+            </div>
+            <div class="pg-step">
+              <div class="pg-num">4</div>
+              <div class="pg-txt">
+                <strong>Custom Proposal</strong>
+                <span>Tailored scope, timeline and outcomes</span>
+              </div>
+            </div>
+            <div class="pg-step">
+              <div class="pg-num">5</div>
+              <div class="pg-txt">
+                <strong>We Build and Grow</strong>
+                <span>Monthly reports. Measurable results.</span>
+              </div>
+            </div>
+          </div>
+          <div class="proc-cta-card fu">
+            <p>Start with a free audit. No commitment, no jargon — just honest insight into your current website.</p>
+            <button onclick="go('contact')">Get My Free Audit →</button>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1050,9 +1209,8 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <div class="fu">
         <h2>Talk to us</h2>
         <p>We respond to every message within 24 hours on working days. We will start by reviewing your current website before we even reply.</p>
-        <div class="cd"><div class="cdi">📲</div><div class="cdb"><strong>WhatsApp</strong><a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX XXXXX</a></div></div>
+        <div class="cd"><div class="cdi">📲</div><div class="cdb"><strong>WhatsApp</strong><a href="https://wa.me/918291649511" target="_blank">+91 82916 49511</a></div></div>
         <div class="cd"><div class="cdi">📧</div><div class="cdb"><strong>Email</strong><a href="mailto:hello@helplaunch.in">hello@helplaunch.in</a></div></div>
-        <div class="cd"><div class="cdi">💼</div><div class="cdb"><strong>LinkedIn</strong><a href="#" target="_blank">HelpLaunch</a></div></div>
         <div class="wnext">
           <h4>What happens next?</h4>
           <div class="wns"><div class="wnn">1</div><p>We review your message and look at your current website covering speed, SEO and UX.</p></div>
@@ -1094,7 +1252,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
     <h2>Prefer to just WhatsApp us?</h2>
     <p>Drop us a message directly. Share your website URL and we will review it and reply with our initial thoughts.</p>
     <div class="acts">
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20a%20free%20website%20audit%20for%20my%20business." class="btn bto" target="_blank">WhatsApp Us Now</a>
+      <a href="https://wa.me/918291649511?text=Hi%2C%20I%20would%20like%20a%20free%20website%20audit%20for%20my%20business." class="btn bto" target="_blank">WhatsApp Us Now</a>
     </div>
   </div>
 </div>
