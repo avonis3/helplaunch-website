@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>HelpLaunch — Website Design, SEO and UX for Growing Businesses</title>
+<meta name="description" content="We build high-performance websites, optimise for search engines, and craft exceptional user experiences that turn visitors into customers."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+button,a,[onclick]{touch-action:manipulation}
+:root{
+  --o:#F97316;--od:#EA580C;--ol:#FEF3C7;--op:#FFF7ED;
+  --g:#16A34A;--gl:#DCFCE7;
+  --ch:#1C1917;--tx:#292524;--mu:#78716C;--bd:#E7E5E4;
+  --cr:#FDFAF6;--wh:#FFFFFF;--wg:#F5F0EA;
+  --sh:0 2px 16px rgba(0,0,0,.07);--shm:0 8px 36px rgba(0,0,0,.11);
+  --r:14px;--rs:8px;--rl:24px
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cr);color:var(--tx);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--ch)}
+h1{font-size:clamp(2rem,5vw,3.4rem)}h2{font-size:clamp(1.7rem,3.5vw,2.6rem)}
+h3{font-size:1.1rem;font-weight:700}p{color:var(--mu);line-height:1.75}a{text-decoration:none}
+.hi{color:var(--o);font-style:normal}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:66px}
+.nav-right{display:flex;align-items:center;gap:28px}
+.logo{font-size:1.3rem;font-weight:800;color:var(--ch);display:flex;align-items:center;cursor:pointer}
+.logo span{color:var(--o)}.logo .dm{width:7px;height:7px;background:var(--o);border-radius:50%;margin-left:2px;margin-bottom:10px;display:inline-block}
+.nl{display:flex;gap:24px;list-style:none;align-items:center}
+.nl a{font-size:.88rem;font-weight:600;color:var(--mu);transition:color .18s;padding:4px 0;border-bottom:2px solid transparent;cursor:pointer}
+.nl a:hover,.nl a.active{color:var(--ch);border-bottom-color:var(--o)}
+.ncta{background:var(--o);color:#fff;border-radius:99px;padding:9px 20px;font-size:.875rem;font-weight:700;transition:background .2s,transform .15s;border:none;cursor:pointer}
+.ncta:hover{background:var(--od);transform:translateY(-1px)}
+.hbg{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.hbg span{display:block;width:22px;height:2px;background:var(--ch);border-radius:2px}
+.mnav{display:none;position:fixed;inset:66px 0 0 0;background:var(--cr);z-index:99;padding:28px 6%;flex-direction:column;gap:0;overflow-y:auto}
+.mnav.open{display:flex}
+.mnav a{font-size:1.1rem;font-weight:600;color:var(--tx);padding:14px 0;border-bottom:1px solid var(--bd);cursor:pointer}
+.mnav .mc{margin-top:20px;background:var(--o);color:#fff;text-align:center;padding:14px;border-radius:99px;border:none;font-weight:700;font-size:1rem;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-weight:700;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+.bto{background:var(--o);color:#fff;padding:13px 26px;border-radius:99px;font-size:.95rem}
+.bto:hover{background:var(--od);transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,.32)}
+.btol{background:transparent;color:var(--ch);border:2px solid var(--bd);padding:12px 26px;border-radius:99px;font-size:.95rem}
+.btol:hover{border-color:var(--o);color:var(--o)}
+.btgh{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.25);padding:12px 26px;border-radius:99px;font-size:.95rem}
+.btgh:hover{border-color:rgba(255,255,255,.6);color:#fff}
+
+/* COMMON */
+.sec{padding:86px 6%}.inn{max-width:1180px;margin:0 auto}
+.sl{display:inline-block;background:var(--ol);color:#92400E;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:16px}
+.sl.g{background:var(--gl);color:var(--g)}.sl.dk{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.sh{margin-bottom:52px}.sh .sub{font-size:1rem;color:var(--mu);max-width:560px;margin-top:12px;line-height:1.8}
+
+/* TICKER */
+.ticker{background:var(--ch);overflow:hidden;padding:13px 0}
+.track{display:flex;gap:56px;animation:tk 26s linear infinite;white-space:nowrap}
+.track:hover{animation-play-state:paused}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.7)}
+.td{color:var(--o);font-size:1rem}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* CARD */
+.card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:28px;transition:all .22s}
+.card:hover{border-color:var(--o);transform:translateY(-4px);box-shadow:var(--shm)}
+.ci{width:50px;height:50px;background:var(--ol);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
+.card h3{margin-bottom:8px}.card p{font-size:.875rem}
+
+/* UPCOMING BADGE */
+.ubadge{display:inline-flex;align-items:center;gap:5px;background:#F0F9FF;color:#0369A1;border:1.5px solid #BAE6FD;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px}
+.upcoming-card{opacity:.75;position:relative}
+
+/* CTA BAND */
+.ctab{background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border-top:1px solid #FED7AA;border-bottom:1px solid #FED7AA;text-align:center;padding:80px 6%}
+.ctab h2{margin-bottom:12px}.ctab p{max-width:520px;margin:0 auto 32px;font-size:1rem}
+.ctab .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FORM */
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.75rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:inherit;font-size:.9rem;color:var(--tx);background:var(--cr);transition:border-color .2s;outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--o)}
+.fg textarea{min-height:100px;resize:vertical}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fsub{width:100%;background:var(--o);color:#fff;border:none;padding:14px;border-radius:var(--rs);font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:6px}
+.fsub:hover{background:var(--od);transform:translateY(-1px)}
+
+/* PAGE HERO */
+.phero{background:var(--ch);padding:88px 6% 100px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+.phero h1{color:#fff;margin-bottom:14px}.phero p{color:rgba(255,255,255,.6);max-width:580px;font-size:1.05rem}
+
+/* FOOTER */
+footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
+.fg-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;max-width:1180px;margin:0 auto 48px}
+.fb p{font-size:.85rem;line-height:1.75;max-width:280px;margin-top:12px}
+.fc h5{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fc ul a{font-size:.875rem;color:rgba(255,255,255,.6);cursor:pointer;transition:color .18s}
+.fc ul a:hover{color:var(--o)}
+.fb-bot{max-width:1180px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.8rem}
+.ftag{background:rgba(249,115,22,.15);color:var(--o);font-size:.72rem;padding:3px 10px;border-radius:99px}
+
+/* WA FLOAT */
+.wa{position:fixed;bottom:24px;right:24px;z-index:999;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 18px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s}
+.wa:hover{transform:scale(1.1)}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.fu.in{opacity:1;transform:translateY(0)}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.65}}
+
+/* SPA PAGES */
+.page{display:none}.page.active{display:block}
+
+/* ===== HOME ===== */
+.hero{background:var(--cr);padding:0 6%}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;min-height:calc(100vh - 66px);max-width:1180px;margin:0 auto}
+.hl{padding:80px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--ol);color:#92400E;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 13px;border-radius:99px;margin-bottom:22px}
+.pulse{width:7px;height:7px;background:var(--o);border-radius:50%;animation:pulse 1.8s ease infinite}
+.hero h1{margin-bottom:20px}.hero p.lead{font-size:1.08rem;color:var(--mu);max-width:480px;margin-bottom:36px}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.hvc{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:26px;box-shadow:var(--shm);position:relative}
+.hvc-row{display:flex;gap:10px;margin-bottom:10px}
+.hvc-s{flex:1;background:var(--wg);border-radius:10px;padding:12px;display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--tx)}
+.hvc-m{background:var(--ch);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;color:#fff;margin-top:6px}
+.hvc-m .ml{font-size:.78rem;color:rgba(255,255,255,.6)}.hvc-m .mv{font-size:1.3rem;font-weight:800}
+.mbadge{background:var(--g);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:99px}
+.fc1{position:absolute;top:50px;right:-24px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:10px 14px;box-shadow:var(--shm);display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--tx)}
+.fc2{position:absolute;bottom:30px;left:-24px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:10px 14px;box-shadow:var(--shm);display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--tx)}
+.fci{font-size:1.3rem}
+
+/* Problem */
+.prob{background:#fff;padding:80px 6%}
+.prob-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.prob-text blockquote{font-size:1.35rem;font-weight:700;color:var(--ch);line-height:1.5;border-left:4px solid var(--o);padding-left:20px;margin:24px 0;font-style:normal}
+.prob-text p{margin-bottom:16px;font-size:.95rem}
+.prob-text .prob-cta{margin-top:32px}
+.vs-c{border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.vs-c.bad{background:#FEF2F2;border:1.5px solid #FECACA}
+.vs-c.good{background:var(--gl);border:1.5px solid #86EFAC}
+.vs-c .vi{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.vs-c h4{font-size:.9rem;font-weight:700;margin-bottom:4px}.vs-c p{font-size:.83rem;margin:0}
+
+/* Philosophy */
+.phil{background:var(--wg);padding:80px 6%}
+.phil-in{max-width:860px;margin:0 auto;text-align:center}
+.phil-in .sl{margin-bottom:16px}
+.phil-in h2{margin-bottom:20px}
+.phil-in .lead-text{font-size:1rem;color:var(--mu);line-height:1.8;max-width:660px;margin:0 auto 16px}
+.phil-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;text-align:left}
+.pillar{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:24px}
+.pillar-icon{font-size:1.6rem;margin-bottom:12px}
+.pillar h4{font-size:.95rem;font-weight:700;color:var(--ch);margin-bottom:8px}
+.pillar p{font-size:.82rem;color:var(--mu);line-height:1.65;margin:0}
+
+/* Services preview */
+.sp-sec{background:var(--wg)}
+.sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.spc{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:all .22s}
+.spc:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:var(--sh)}
+.spc .si{font-size:1.8rem}.spc h3{font-size:.95rem}.spc p{font-size:.82rem;flex:1}
+.spc a{font-size:.8rem;font-weight:700;color:var(--o);cursor:pointer;margin-top:auto}
+
+/* Testimonials */
+.tcard{background:var(--cr);border:1px solid var(--bd);border-radius:var(--r);padding:26px}
+.tstars{color:#F59E0B;font-size:.95rem;margin-bottom:12px;letter-spacing:2px}
+.tcard blockquote{font-size:.88rem;color:var(--tx);line-height:1.75;margin-bottom:18px;font-style:italic}
+.tauth{display:flex;align-items:center;gap:12px}
+.tav{width:40px;height:40px;border-radius:50%;background:var(--ol);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#92400E;flex-shrink:0}
+.tin strong{display:block;font-size:.85rem;font-weight:700}
+.tin span{font-size:.78rem;color:var(--mu)}
+
+/* ===== SERVICES ===== */
+.sb{padding:86px 6%}
+.sb:nth-child(even){background:#fff}
+.sb:nth-child(odd){background:var(--cr)}
+.sb-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start}
+.sb-in.flip{direction:rtl}.sb-in.flip>*{direction:ltr}
+.sbh{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sbic{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0}
+.sbic.or{background:var(--ol)}.sbic.am{background:#FEF3C7}.sbic.gr{background:var(--gl)}.sbic.bl{background:#DBEAFE}
+.sbh h2{font-size:1.75rem}
+.sdesc{color:var(--mu);font-size:.95rem;line-height:1.8;margin-bottom:24px}
+.inct{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:12px}
+.incl{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.incl li{display:flex;align-items:flex-start;gap:10px;font-size:.875rem;color:var(--tx)}
+.incl li::before{content:'✓';color:var(--g);font-weight:800;flex-shrink:0;margin-top:2px}
+.whoc{background:var(--op);border-radius:var(--r);padding:20px;margin-bottom:24px}
+.whoc h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--od);margin-bottom:8px}
+.whoc p{font-size:.85rem;color:var(--tx);margin:0;line-height:1.65}
+.sbvis{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:28px;box-shadow:var(--sh);position:sticky;top:90px}
+.sbvis h4{font-size:.85rem;font-weight:700;color:var(--mu);margin-bottom:16px;text-transform:uppercase;letter-spacing:.06em}
+.mr{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.mr:last-child{border:none}
+.mr span{font-size:.82rem;color:var(--mu);flex:1;min-width:0}
+.mr strong{font-size:.88rem;color:var(--ch);white-space:nowrap;flex-shrink:0}
+.mbg{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+.mbg.up{background:var(--gl);color:var(--g)}.mbg.gu{background:var(--ol);color:var(--od)}
+.gpill{display:flex;align-items:center;gap:8px;background:var(--gl);border:1.5px solid #86EFAC;border-radius:10px;padding:12px 16px;margin-top:16px}
+.gpill p{font-size:.82rem;font-weight:600;color:#15803D;margin:0}
+
+/* Services overview grid */
+.svcs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svcs-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px;transition:all .22s}
+.svcs-card:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:var(--sh)}
+.svcs-card.upcoming-card{border-style:dashed;background:var(--wg);opacity:.8}
+.svcs-card.upcoming-card:hover{border-color:#BAE6FD;transform:none;box-shadow:none}
+.svcs-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--o)}
+.svcs-card .si{font-size:1.6rem}
+.svcs-card h3{font-size:.95rem;margin-bottom:2px}
+.svcs-card p{font-size:.8rem}
+
+/* Comparison table */
+.comp{background:var(--ch);padding:80px 6%}
+.comp-in{max-width:1000px;margin:0 auto}
+.comp h2{color:#fff;margin-bottom:10px}
+.ctbl{width:100%;border-collapse:collapse}
+.ctbl th{padding:14px 18px;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;text-align:left}
+.ctbl th:nth-child(2),.ctbl th:nth-child(3){text-align:center;color:var(--mu)}
+.ctbl th:nth-child(4){text-align:center;color:var(--o);background:rgba(249,115,22,.1);border-radius:8px 8px 0 0}
+.ctbl td{padding:12px 18px;font-size:.875rem;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+.ctbl td:nth-child(2),.ctbl td:nth-child(3){text-align:center}
+.ctbl td:nth-child(4){text-align:center;background:rgba(249,115,22,.07)}
+.ctk{color:var(--g);font-weight:800}.ctx{color:#F87171}
+
+/* ===== HOW WE WORK ===== */
+.pstep{display:grid;grid-template-columns:56px 1fr;gap:24px;position:relative}
+.pstep:not(:last-child)::after{content:'';position:absolute;left:27px;top:56px;bottom:-32px;width:2px;background:linear-gradient(to bottom,var(--o),var(--ol));z-index:0}
+.pnode{width:56px;height:56px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0;z-index:1;box-shadow:0 0 0 6px var(--ol)}
+.pbody{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:26px 28px;margin-bottom:40px}
+.pbody h3{font-size:1.15rem;margin-bottom:8px}.pbody p{font-size:.9rem;margin-bottom:12px}
+.pchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pchip{background:var(--wg);border:1px solid var(--bd);border-radius:99px;padding:4px 12px;font-size:.75rem;font-weight:600;color:var(--mu)}
+.pnote{display:flex;align-items:center;gap:8px;background:var(--op);border-radius:var(--rs);padding:10px 14px;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--od)}
+
+/* Guarantees */
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.gc{border:2px solid var(--gl);border-radius:var(--r);padding:26px;background:#fff;position:relative;overflow:hidden;transition:all .22s}
+.gc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--g)}
+.gc:hover{border-color:var(--g);box-shadow:var(--shm);transform:translateY(-3px)}
+.gch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.gci{font-size:1.8rem}.gcb{background:var(--gl);color:var(--g);font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.gc h3{font-size:1rem;margin-bottom:8px}.gc .gmet{font-size:1.5rem;font-weight:800;color:var(--o);margin-bottom:6px}
+.gc p{font-size:.82rem;color:var(--mu);margin-bottom:14px}
+.gmiss{background:var(--op);border-radius:var(--rs);padding:10px 12px}
+.gmiss-t{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--od);margin-bottom:4px}
+.gmiss p{font-size:.8rem;color:var(--tx);margin:0}
+
+/* Audit chips */
+.audit-chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.audit-chip{background:#fff;border:1.5px solid var(--bd);border-radius:99px;padding:8px 18px;font-size:.85rem;font-weight:600;color:var(--tx);display:flex;align-items:center;gap:6px}
+.audit-chip::before{content:'✓';color:var(--g);font-weight:800}
+
+/* ===== ABOUT ===== */
+.ab-hero{background:var(--cr);padding:80px 6%;border-bottom:1px solid var(--bd)}
+.ab-in{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ab-in h1{margin-bottom:18px}.ab-in p{font-size:1.05rem;color:var(--mu);line-height:1.8}
+.abvis{background:var(--ch);border-radius:24px;padding:36px}
+.abq{font-size:1.15rem;font-weight:700;color:#fff;line-height:1.6;border-left:3px solid var(--o);padding-left:18px;margin-bottom:20px;font-style:italic}
+.story-in{max-width:760px;margin:0 auto}
+.story-in p{font-size:.95rem;color:var(--mu);line-height:1.85;margin-bottom:20px}
+.story-in p strong{color:var(--tx);font-weight:700}
+.spull{background:var(--op);border-left:4px solid var(--o);border-radius:0 var(--r) var(--r) 0;padding:20px 24px;margin:32px 0;font-size:1.1rem;font-weight:700;color:var(--ch);line-height:1.6}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.vc{padding:30px;border-radius:var(--r);border:1px solid var(--bd);background:#fff}
+.vc .vn{font-size:3rem;font-weight:800;color:var(--ol);line-height:1;margin-bottom:12px}
+.vc h3{margin-bottom:10px}.vc p{font-size:.88rem}
+
+/* ===== CONTACT ===== */
+.ct-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;max-width:1060px;margin:0 auto}
+.ct-l h2{font-size:1.6rem;margin-bottom:10px}
+.ct-l p{font-size:.925rem;color:var(--mu);line-height:1.8;margin-bottom:32px}
+.cd{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--bd)}
+.cd:last-of-type{border:none}
+.cdi{width:42px;height:42px;min-width:42px;background:var(--ol);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.cdb strong{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin-bottom:3px}
+.cdb a,.cdb span{font-size:.9rem;font-weight:600;color:var(--ch)}
+.cdb a:hover{color:var(--o)}
+.wnext{margin-top:32px;background:var(--wg);border-radius:var(--r);padding:22px}
+.wnext h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:14px}
+.wns{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.wns:last-child{margin-bottom:0}
+.wnn{width:24px;height:24px;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px}
+.wns p{font-size:.82rem;color:var(--tx);margin:0;line-height:1.6}
+.cfw{background:#fff;border-radius:var(--rl);padding:38px;box-shadow:var(--shm);border:1px solid var(--bd)}
+.cfh{margin-bottom:24px}.cfh h3{font-size:1.2rem;margin-bottom:6px}.cfh p{font-size:.85rem;color:var(--mu)}
+.smsg{display:none;background:var(--gl);border:1.5px solid #86EFAC;border-radius:var(--rs);padding:16px;text-align:center;margin-top:12px}
+.smsg.show{display:block}.smsg p{color:#15803D;font-size:.9rem;font-weight:600;margin:0}
+
+/* RESPONSIVE */
+@media(max-width:920px){
+  .nav-right,.ncta{display:none}.hbg{display:flex}
+  .g3,.ggrid,.ct-grid,.svcs-grid,.phil-pillars{grid-template-columns:1fr}
+  .hero-in,.prob-in,.ab-in{grid-template-columns:1fr}
+  .hero-in{min-height:auto;padding:52px 0 60px} /* remove dead space when visual is hidden */
+  .fg-grid{grid-template-columns:1fr 1fr}
+  .sb-in,.sb-in.flip{grid-template-columns:1fr;direction:ltr}
+  .sbvis{position:static}
+  .hvc,.fc1,.fc2,.abvis{display:none}
+  .comp-in{overflow-x:auto}
+  .ctbl{min-width:560px}
+  .phero{padding:56px 6% 68px;clip-path:none} /* clip-path looks bad on narrow screens */
+  .phil-in{text-align:left}
+  .mp-list{grid-template-columns:1fr}
+  .mp-item:nth-child(odd){border-right:none}
+  .mp-item:nth-last-child(-n+2){border-bottom:1px solid var(--bd)}
+  .mp-item:last-child{border-bottom:none}
+}
+@media(max-width:640px){
+  .sec{padding:52px 5%}
+  .g2,.sp-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .fg-grid{grid-template-columns:1fr}
+  .hl{padding:40px 0 28px}
+  .svcs-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:1.75rem;line-height:1.22}
+  h2{font-size:1.4rem}
+  .hbtns{flex-direction:column;align-items:flex-start}
+  .hbtns .btn{width:100%;justify-content:center;text-align:center}
+  .ctab{padding:52px 5%}
+  .ctab .acts{flex-direction:column;align-items:center}
+  .ctab .acts .btn{width:100%;max-width:340px;justify-content:center}
+  .sbh h2{font-size:1.3rem}
+  .sbic{width:46px;height:46px;font-size:1.3rem}
+  .pstep{grid-template-columns:44px 1fr;gap:16px}
+  .pnode{width:44px;height:44px;font-size:.95rem}
+  .ticker .track{gap:36px}
+  .mr strong{font-size:.82rem}
+  .mbg{font-size:.68rem;padding:2px 8px}
+  .cfw{padding:24px 20px}
+  .cfh h3{font-size:1rem}
+  .phero h1{font-size:1.55rem}
+  .phero p{font-size:.95rem}
+  .wa{width:46px;height:46px;font-size:1.3rem;bottom:16px;right:16px}
+  /* Before/After: images bigger when stacked */
+  .ba-img-wrap img,.ba-placeholder{height:200px}
+  /* Carousel tap targets */
+  .bc-btn{width:36px;height:36px;font-size:1.25rem}
+  .bc-count{font-size:.7rem}
+  /* Monthly partner compact */
+  .mp-item{padding:13px 14px;gap:10px}
+  .mp-icon{font-size:1.1rem;width:26px}
+  .mp-freq{font-size:.62rem;padding:2px 8px}
+  /* What changed tags */
+  .bct{font-size:.7rem;padding:3px 10px}
+  /* Lightbox mobile */
+  #lbx{padding:8px}
+  .lbx-box{max-height:96vh;border-radius:12px}
+  .lbx-head{padding:11px 14px;gap:8px;flex-wrap:nowrap}
+  .lbx-title{font-size:.7rem;letter-spacing:.04em}
+  .lbx-nav,.lbx-close{width:30px;height:30px;font-size:1rem}
+  .lbx-body{padding:10px}
+  .lbx-body img{max-height:78vh;border-radius:6px}
+}
+
+/* ── BEFORE / AFTER LIGHTBOX ── */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.ba-card{background:#fff;border:1px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.ba-header{background:var(--wg);padding:18px 24px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
+.ba-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu)}
+.ba-name{font-size:1.05rem;font-weight:700;color:var(--ch);margin-top:3px}
+.ba-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.ba-side{padding:20px}
+.ba-side.border-r{border-right:1px solid var(--bd)}
+.ba-tag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.ba-tag.before{color:#DC2626}
+.ba-tag.after{color:#16a34a}
+.ba-img-wrap{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s,transform .15s,box-shadow .2s}
+.ba-img-wrap:hover{border-color:var(--o);transform:scale(1.02);box-shadow:0 8px 28px rgba(249,115,22,.2)}
+.ba-img-wrap img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+.ba-img-wrap .ba-zoom{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.55);color:#fff;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px;opacity:0;transition:opacity .2s;pointer-events:none}
+.ba-img-wrap:hover .ba-zoom{opacity:1}
+.ba-placeholder{width:100%;height:220px;border-radius:10px;border:2px dashed var(--bd);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--mu);font-size:.82rem;font-weight:600;gap:6px;background:var(--wg)}
+.ba-footer{padding:14px 24px;background:var(--wg);border-top:1px solid var(--bd)}
+.ba-footer p{font-size:.82rem;color:var(--mu);margin:0}
+.ba-footer strong{color:var(--ch)}
+/* What Changed tags */
+.ba-changes{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.bct{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--ol);color:var(--o);border:1px solid rgba(249,115,22,.18);white-space:nowrap}
+/* Monthly Partner list */
+.mp-list{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;background:#fff}
+.mp-item{display:flex;align-items:center;gap:14px;padding:15px 20px;border-bottom:1px solid var(--bd)}
+.mp-item:nth-child(odd){border-right:1px solid var(--bd)}
+.mp-item:nth-last-child(-n+2){border-bottom:none}
+.mp-icon{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center}
+.mp-txt{flex:1;min-width:0}
+.mp-txt strong{display:block;font-size:.88rem;font-weight:700;color:var(--ch);margin-bottom:2px}
+.mp-txt span{font-size:.77rem;color:var(--mu);line-height:1.4}
+.mp-freq{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:99px;background:var(--ol);color:var(--o);white-space:nowrap;flex-shrink:0;text-transform:uppercase;letter-spacing:.04em}
+/* Carousel nav */
+.bc-nav{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0 0}
+.bc-nav.hidden{display:none}
+.bc-btn{background:var(--wg);border:1px solid var(--bd);color:var(--ch);width:30px;height:30px;border-radius:50%;font-size:1.15rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;font-weight:700;line-height:1;flex-shrink:0}
+.bc-btn:hover{background:var(--o);color:#fff;border-color:var(--o)}
+.bc-count{font-size:.75rem;font-weight:700;color:var(--mu);min-width:80px;text-align:center;white-space:nowrap}
+/* Lightbox */
+#lbx{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .22s}
+#lbx.open{opacity:1;pointer-events:all}
+.lbx-box{background:#111;border-radius:16px;overflow:hidden;max-width:900px;width:100%;max-height:90vh;display:flex;flex-direction:column;transform:scale(.95);transition:transform .22s}
+#lbx.open .lbx-box{transform:scale(1)}
+.lbx-head{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.1);gap:12px}
+.lbx-title{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;flex:1}
+.lbx-title.before{color:#f87171}
+.lbx-title.after{color:#4ade80}
+.lbx-nav-group{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lbx-nav{background:rgba(255,255,255,.12);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.15rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.lbx-nav:hover:not(:disabled){background:var(--o)}
+.lbx-nav:disabled{opacity:.25;cursor:default}
+.lbx-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.lbx-close:hover{background:rgba(255,255,255,.25)}
+.lbx-body{overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:20px}
+.lbx-body img{max-width:100%;max-height:70vh;border-radius:8px;object-fit:contain;transition:opacity .15s}
+@media(max-width:920px){.ba-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.ba-body{grid-template-columns:1fr}.ba-side.border-r{border-right:none;border-bottom:1px solid var(--bd)}.ba-img-wrap img,.ba-placeholder{height:180px}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="wa" title="WhatsApp" target="_blank" rel="noopener">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="go('home')">Help<span>Launch</span><span class="dm"></span></div>
+  <div class="nav-right">
+    <ul class="nl">
+      <li><a onclick="go('home')" data-p="home" class="active">Home</a></li>
+      <li><a onclick="go('services')" data-p="services">Services</a></li>
+      <li><a onclick="go('how')" data-p="how">How We Work</a></li>
+      <li><a onclick="go('about')" data-p="about">About</a></li>
+      <li><a onclick="go('contact')" data-p="contact">Contact</a></li>
+    </ul>
+    <button class="ncta" onclick="go('contact')">Free Consultation</button>
+  </div>
+  <button class="hbg" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mnav" id="mnav">
+  <a onclick="go('home');toggleNav()">Home</a>
+  <a onclick="go('services');toggleNav()">Services</a>
+  <a onclick="go('how');toggleNav()">How We Work</a>
+  <a onclick="go('about');toggleNav()">About</a>
+  <a onclick="go('contact');toggleNav()">Contact</a>
+  <button onclick="go('contact');toggleNav()" class="mc">Get Free Consultation</button>
+</div>
+
+<!-- ==================== HOME ==================== -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-in">
+      <div class="hl fu">
+        <div class="eyebrow"><span class="pulse"></span> Websites that actually work</div>
+        <h1>Beautiful Websites. <em class="hi">Better SEO.</em> Exceptional User Experience.</h1>
+        <p class="lead">We design and build high-performance websites, optimise them to rank on Google, and craft user experiences that turn every visitor into a customer.</p>
+        <div class="hbtns">
+          <button class="btn bto" onclick="go('contact')">Get a Free Consultation</button>
+        </div>
+      </div>
+      <div class="fu" style="position:relative;padding:80px 0">
+        <div class="hvc">
+          <p style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:12px;">Your Digital Presence, Fully Built</p>
+          <div class="hvc-row"><div class="hvc-s">🌐 Website</div><div class="hvc-s">🎨 UX/UI</div></div>
+          <div class="hvc-row"><div class="hvc-s">🔎 SEO</div><div class="hvc-s">📈 Analytics</div></div>
+          <div class="hvc-row"><div class="hvc-s">⭐ Reputation</div><div class="hvc-s">🗂️ CRM</div></div>
+          <div class="hvc-m"><div><div class="ml">Organic Traffic</div><div class="mv">+247% this quarter</div></div><div class="mbadge">SEO</div></div>
+        </div>
+        <div class="fc1"><span class="fci">🚀</span><div><div style="font-size:.68rem;color:var(--mu)">PageSpeed Score</div><strong>96 / 100</strong></div></div>
+        <div class="fc2"><span class="fci">✅</span><div><div style="font-size:.68rem;color:var(--mu)">Live in</div><strong>7 working days</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="track">
+      <span class="ti"><span class="td">●</span>Website Design and Development</span>
+      <span class="ti"><span class="td">●</span>UX and UI Optimisation</span>
+      <span class="ti"><span class="td">●</span>Search Engine Optimisation</span>
+      <span class="ti"><span class="td">●</span>Google Business Profile</span>
+      <span class="ti"><span class="td">●</span>CRM Setup</span>
+      <span class="ti"><span class="td">●</span>Online Reputation</span>
+      <span class="ti"><span class="td">●</span>Analytics Dashboard</span>
+      <span class="ti"><span class="td">●</span>Results Guaranteed</span>
+      <span class="ti"><span class="td">●</span>Website Design and Development</span>
+      <span class="ti"><span class="td">●</span>UX and UI Optimisation</span>
+      <span class="ti"><span class="td">●</span>Search Engine Optimisation</span>
+      <span class="ti"><span class="td">●</span>Google Business Profile</span>
+      <span class="ti"><span class="td">●</span>CRM Setup</span>
+      <span class="ti"><span class="td">●</span>Online Reputation</span>
+      <span class="ti"><span class="td">●</span>Analytics Dashboard</span>
+      <span class="ti"><span class="td">●</span>Results Guaranteed</span>
+    </div>
+  </div>
+
+  <!-- THE HARD TRUTH -->
+  <div class="prob">
+    <div class="prob-in inn">
+      <div class="prob-text fu">
+        <span class="sl" style="margin-bottom:16px">The Hard Truth</span>
+        <h2>You have a website. But does it <em class="hi">actually work?</em></h2>
+        <blockquote>"Someone searched for exactly what you offer on Google yesterday. They found your competitor because your site loaded in 6 seconds and had no SEO."</blockquote>
+        <p>A beautiful website that nobody finds is a brochure sitting in a drawer. A website that ranks on Google but confuses visitors is a leaky funnel. You need both, and that is exactly what we build.</p>
+        <div class="prob-cta">
+          <button class="btn btol" onclick="go('about')">Read Our Story</button>
+        </div>
+      </div>
+      <div class="fu">
+        <div class="vs-c bad"><span class="vi">😟</span><div><h4>Without the right foundation</h4><p>Slow website, zero SEO, confusing UX. Visitors leave in 3 seconds and never come back.</p></div></div>
+        <div class="vs-c good"><span class="vi">🚀</span><div><h4>With HelpLaunch</h4><p>Fast, SEO-optimised website with a clear user journey that turns visitors into enquiries around the clock.</p></div></div>
+        <div class="vs-c good"><span class="vi">📊</span><div><h4>Measurable, not vague</h4><p>Page speed scores, keyword rankings, conversion rates. We track everything and report it clearly every month.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="sp-sec sec">
+    <div class="inn">
+      <div class="sh fu" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+        <div><span class="sl">What We Do</span><h2>Everything your website needs to <em class="hi">perform.</em></h2></div>
+        <button class="btn btol" onclick="go('services')">View All Services</button>
+      </div>
+      <div class="sp-grid">
+        <div class="spc fu"><div class="si">🌐</div><h3>Website Design and Development</h3><p>Custom, fast, mobile-first websites built to convert. Live in 7 working days.</p><a onclick="go('services')">Learn more</a></div>
+        <div class="spc fu"><div class="si">🎨</div><h3>UX and UI Design</h3><p>Better structure, clearer CTAs, faster load times. Turn more visitors into enquiries.</p><a onclick="go('services')">Learn more</a></div>
+        <div class="spc fu"><div class="si">🔎</div><h3>SEO</h3><p>Keyword research, on-page optimisation, technical SEO. Rank higher and get found for free.</p><a onclick="go('services')">Learn more</a></div>
+        <div class="spc fu"><div class="si">📍</div><h3>Google Business Profile</h3><p>Get into the local map pack and capture the majority of local search clicks.</p><a onclick="go('services')">Learn more</a></div>
+        <div class="spc fu"><div class="si">⭐</div><h3>Online Reputation</h3><p>Grow your Google reviews, build trust signals, and manage your brand presence online.</p><a onclick="go('services')">Learn more</a></div>
+        <div class="spc fu"><div class="si">📈</div><h3>Analytics Dashboard</h3><p>Monthly clarity on what is working, covering visitors, rankings, leads, and revenue impact.</p><a onclick="go('services')">Learn more</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" style="background:#fff">
+    <div class="inn">
+      <div class="sh fu"><span class="sl">What Clients Say</span><h2>Businesses already <em class="hi">growing with us</em></h2><p class="sub">Real results from real clients.</p></div>
+      <div class="g3">
+        <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"HelpLaunch rebuilt our website and within 45 days we were ranking on the first page of Google for our top 3 keywords. The SEO work alone brought us 12 new clients in the first month."</blockquote><div class="tauth"><div class="tav">RS</div><div class="tin"><strong>Ramesh S.</strong><span>Hardware Store, Pune</span></div></div></div>
+        <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"Our old website took 8 seconds to load on mobile. HelpLaunch redesigned it, got our PageSpeed to 94, and our bounce rate dropped by 40% in the first month. More enquiries from the same traffic."</blockquote><div class="tauth"><div class="tav">PM</div><div class="tin"><strong>Priya M.</strong><span>Nutrition Clinic, Surat</span></div></div></div>
+        <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"I had a website but it was not converting. They revamped the UX, rewrote the copy, and added clear CTAs. Our consultation bookings doubled within 6 weeks with no increase in ad spend."</blockquote><div class="tauth"><div class="tav">DK</div><div class="tin"><strong>Dr. Kavita N.</strong><span>Dermatology Clinic, Nagpur</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctab">
+    <h2>Ready for a website that <em class="hi">actually works?</em></h2>
+    <p>Start with a free audit. We will analyse your site's speed, UX, and SEO and tell you exactly what needs to change.</p>
+    <div class="acts"><button class="btn bto" onclick="go('contact')">Get My Free Audit</button></div>
+  </div>
+</div>
+<!-- END HOME -->
+
+<!-- ==================== SERVICES ==================== -->
+<div class="page" id="page-services">
+  <div class="phero">
+    <div class="inn fu">
+      <span class="sl dk" style="margin-bottom:16px">What We Offer</span>
+      <h1>Get found. Get chosen. <em class="hi">Keep growing.</em></h1>
+      <p>Every service is done for you, end to end. No technical knowledge required on your part.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES OVERVIEW GRID -->
+  <section class="sec" style="background:#fff">
+    <div class="inn">
+      <div class="sh fu">
+        <span class="sl">All Services</span>
+        <h2>Active services <em class="hi">and what is coming soon</em></h2>
+        <p class="sub">Everything done for you, end to end. No technical knowledge required on your part.</p>
+      </div>
+      <div class="svcs-grid fu">
+        <!-- ACTIVE SERVICES -->
+        <div class="svcs-card"><div class="svcs-num">01</div><div class="si">🌐</div><h3>Website Design and Development</h3><p>Fast, mobile-first, conversion-focused websites built in 7 working days.</p></div>
+        <div class="svcs-card"><div class="svcs-num">02</div><div class="si">🎨</div><h3>UX and UI Optimisation</h3><p>Better CTAs, navigation, trust signals, and page speed to increase conversions.</p></div>
+        <div class="svcs-card"><div class="svcs-num">03</div><div class="si">🔎</div><h3>SEO</h3><p>Keyword research, on-page, technical SEO, blogs, backlinks. Rank higher for free.</p></div>
+        <div class="svcs-card"><div class="svcs-num">04</div><div class="si">📍</div><h3>Google Business Profile</h3><p>Get into the local map pack and capture the majority of local search clicks.</p></div>
+        <div class="svcs-card"><div class="svcs-num">05</div><div class="si">⭐</div><h3>Online Reputation</h3><p>Grow your Google reviews, build trust signals, and manage your brand online.</p></div>
+        <div class="svcs-card"><div class="svcs-num">06</div><div class="si">📈</div><h3>Analytics Dashboard</h3><p>Monthly KPI reports covering visitors, rankings, leads, and conversion rate. No jargon.</p></div>
+        <div class="svcs-card"><div class="svcs-num">07</div><div class="si">🗂️</div><h3>CRM Setup</h3><p>Track every lead from enquiry to closed deal. Never lose a lead again.</p></div>
+        <div class="svcs-card"><div class="svcs-num">08</div><div class="si">✍️</div><h3>Content Marketing</h3><p>SEO blogs, case studies, landing pages. Content that ranks and converts.</p></div>
+        <!-- COMING SOON -->
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">09</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">🎯</div><h3>Google Ads</h3><p>Paid search campaigns with conversion tracking and continuous optimisation.</p></div>
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">10</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">📸</div><h3>Meta Ads</h3><p>Facebook and Instagram campaigns for awareness, leads and conversions.</p></div>
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">11</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">🤖</div><h3>AI Automation</h3><p>Chatbots, lead scoring, CRM automation and proposal generation via AI.</p></div>
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">12</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">💼</div><h3>LinkedIn Marketing</h3><p>Founder authority building, strategic posts, and outreach campaigns.</p></div>
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">13</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">📧</div><h3>Email Marketing</h3><p>Automated flows and campaigns that bring past customers back.</p></div>
+        <div class="svcs-card upcoming-card"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="svcs-num">14</div><span class="ubadge">🔜 Coming Soon</span></div><div class="si">📲</div><h3>WhatsApp Automation</h3><p>Lead qualification, booking, follow-up, and review automation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE DEEP DIVES (active services only) -->
+  <div class="sb" style="padding-top:20px">
+    <div class="sb-in inn">
+      <div class="fu">
+        <div class="sbh"><div class="sbic or">🌐</div><div><span class="sl" style="margin-bottom:4px">Service 01</span><h2>Website Design and Development</h2></div></div>
+        <p class="sdesc">Your website is your 24/7 salesperson. We build fast, mobile-first websites that make a strong first impression, load in under 2 seconds, and turn visitors into enquiries.</p>
+        <div class="inct">What's Included</div>
+        <ul class="incl">
+          <li>Custom-designed, mobile-optimised website</li>
+          <li>Up to 7 pages including Home, About, Services, Portfolio, Blog, Testimonials and Contact</li>
+          <li>Contact form, WhatsApp button and Google Maps embed</li>
+          <li>On-page SEO setup including meta titles, descriptions, schema and sitemap</li>
+          <li>Google Analytics 4 and Search Console integration</li>
+          <li>PageSpeed score of 80 or above guaranteed</li>
+          <li>30 days of post-launch support</li>
+        </ul>
+        <div class="whoc"><h4>Who This Is For</h4><p>Any business with no website, an outdated site, or a site that does not generate enquiries. If your website is not converting, it is costing you money every day.</p></div>
+        <button class="btn bto" onclick="go('contact')">Get Your Website</button>
+      </div>
+      <div class="sbvis fu">
+        <h4>Typical Results</h4>
+        <div class="mr"><span>Go-Live Time</span><strong>7 Working Days</strong><span class="mbg gu">Guaranteed</span></div>
+        <div class="mr"><span>PageSpeed Score</span><strong>80 or above</strong><span class="mbg gu">Guaranteed</span></div>
+        <div class="mr"><span>Mobile Optimised</span><strong>100%</strong><span class="mbg up">Always</span></div>
+        <div class="mr"><span>Enquiries in First Month</span><strong>35% to 80% uplift</strong><span class="mbg up">Avg.</span></div>
+        <div class="gpill"><span>🔏</span><p>Website live within 7 working days of content handoff. If we miss it, we add one month of free maintenance.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb">
+    <div class="sb-in flip inn">
+      <div class="fu">
+        <div class="sbh"><div class="sbic am">🎨</div><div><span class="sl" style="margin-bottom:4px">Service 02</span><h2>UX and UI Optimisation</h2></div></div>
+        <p class="sdesc">You might be getting traffic but if visitors are not converting, you have a UX problem. We analyse your site's user journey and remove every piece of friction between a visitor and an enquiry.</p>
+        <div class="inct">What's Included</div>
+        <ul class="incl">
+          <li>Full UX audit covering navigation, CTAs, forms and trust signals</li>
+          <li>Page speed and Core Web Vitals improvement</li>
+          <li>Above-the-fold redesign for key landing pages</li>
+          <li>CTA copy and placement optimisation</li>
+          <li>Mobile experience review and fixes</li>
+          <li>A/B testing recommendations</li>
+        </ul>
+        <div class="whoc"><h4>Who This Is For</h4><p>Businesses that already have a website and traffic but are not getting enough enquiries or calls. If your bounce rate is above 60%, this is the service you need.</p></div>
+        <button class="btn bto" onclick="go('contact')">Improve My UX</button>
+      </div>
+      <div class="sbvis fu">
+        <h4>Typical Results</h4>
+        <div class="mr"><span>Bounce Rate Reduction</span><strong>15% to 40%</strong><span class="mbg up">Avg.</span></div>
+        <div class="mr"><span>Conversion Rate Lift</span><strong>25% to 60%</strong><span class="mbg up">Avg.</span></div>
+        <div class="mr"><span>PageSpeed Improvement</span><strong>20 to 50 points</strong><span class="mbg up">Typical</span></div>
+        <div class="mr"><span>Audit Delivery</span><strong>Within 5 Days</strong><span class="mbg gu">Guaranteed</span></div>
+        <div class="gpill"><span>💡</span><p>A UX fix costs far less than buying more traffic to a site that does not convert.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb">
+    <div class="sb-in inn">
+      <div class="fu">
+        <div class="sbh"><div class="sbic or">🔎</div><div><span class="sl" style="margin-bottom:4px">Service 03</span><h2>Search Engine Optimisation</h2></div></div>
+        <p class="sdesc">When someone searches for what you offer on Google, you should be the first result they see. SEO is the only marketing channel that works while you sleep and compounds over time.</p>
+        <div class="inct">What's Included</div>
+        <ul class="incl">
+          <li>Keyword research and competitor gap analysis</li>
+          <li>On-page SEO covering titles, meta, headings, schema and internal links</li>
+          <li>Technical SEO covering site speed, crawlability and Core Web Vitals</li>
+          <li>Local SEO optimisation via Google Business and citations</li>
+          <li>SEO blog content creation at 2 posts per month</li>
+          <li>Backlink outreach and building</li>
+          <li>Monthly ranking and traffic report</li>
+        </ul>
+        <div class="whoc"><h4>Tools We Use</h4><p>Ahrefs, SEMRush, Google Search Console, Google Analytics 4, Screaming Frog and PageSpeed Insights.</p></div>
+        <button class="btn bto" onclick="go('contact')">Start SEO</button>
+      </div>
+      <div class="sbvis fu">
+        <h4>What to Expect</h4>
+        <div class="mr"><span>First Ranking Improvements</span><strong>Within 60 to 90 days</strong><span class="mbg up">Avg.</span></div>
+        <div class="mr"><span>Organic Traffic Growth</span><strong>40% to 120% uplift</strong><span class="mbg up">6 months</span></div>
+        <div class="mr"><span>Keywords Tracked Monthly</span><strong>20 to 50 keywords</strong><span class="mbg gu">Included</span></div>
+        <div class="gpill"><span>🔏</span><p>SEO compounds over time. Clients who start early see results for years without ongoing ad spend.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING SOON SECTION -->
+  <section class="sec" style="background:var(--wg)">
+    <div class="inn">
+      <div class="sh fu">
+        <span class="ubadge" style="margin-bottom:16px;font-size:.75rem;padding:5px 13px">🔜 Coming Soon</span>
+        <h2>Services we are <em class="hi">launching soon</em></h2>
+        <p class="sub">These services are in development. Join the waitlist and be first in line when they launch.</p>
+      </div>
+      <div class="g3 fu">
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#FEF9C3">🎯</div>
+          <h3>Google Ads</h3>
+          <p>Paid search campaigns with full conversion tracking. Ideal for businesses that want leads while SEO builds over time.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#FEF9C3">📸</div>
+          <h3>Meta Ads</h3>
+          <p>Facebook and Instagram campaigns for awareness, lead generation and conversions, with full creative and targeting management.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#F0F9FF">🤖</div>
+          <h3>AI Automation</h3>
+          <p>Chatbots, lead scoring, CRM automation and proposal generation. Build workflows that run without you.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#F0F9FF">💼</div>
+          <h3>LinkedIn Marketing</h3>
+          <p>Founder authority building with strategic posts 2 to 3 times per week, connection outreach and DM campaigns.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#F0F9FF">📧</div>
+          <h3>Email Marketing</h3>
+          <p>Automated welcome flows, re-engagement campaigns and monthly newsletters that bring past customers back.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+        <div class="card upcoming-card">
+          <div class="ci" style="background:#F0F9FF">📲</div>
+          <h3>WhatsApp Automation</h3>
+          <p>Automated lead qualification, booking flows, follow-up sequences and review requests via WhatsApp Business API.</p>
+          <div style="margin-top:16px"><span class="ubadge">🔜 Coming Soon</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEST COMPARISON -->
+  <div class="comp">
+    <div class="comp-in fu">
+      <span class="sl dk" style="margin-bottom:12px">The Honest Comparison</span>
+      <h2 style="color:#fff;margin-bottom:40px">What you are actually choosing between</h2>
+      <table class="ctbl">
+        <thead><tr><th>Factor</th><th>Doing Nothing</th><th>DIY or Freelancer</th><th>HelpLaunch</th></tr></thead>
+        <tbody>
+          <tr><td>Website V1 live in 7 days</td><td class="ctx">No</td><td class="ctx">Rarely</td><td class="ctk">Yes, guaranteed</td></tr>
+          <tr><td>PageSpeed score of 80 or above</td><td class="ctx">No</td><td class="ctx">Not always</td><td class="ctk">Yes, guaranteed</td></tr>
+          <tr><td>SEO built in from day one</td><td class="ctx">No</td><td class="ctx">Extra cost</td><td class="ctk">Always included</td></tr>
+          <tr><td>UX optimised for conversions</td><td class="ctx">No</td><td class="ctx">Varies</td><td class="ctk">Core focus</td></tr>
+          <tr><td>Monthly reporting</td><td>None</td><td class="ctx">Rarely</td><td class="ctk">Every month</td></tr>
+          <tr><td>Written guarantees</td><td>None</td><td class="ctx">No</td><td class="ctk">In writing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ctab">
+    <h2>Not sure which service you need?</h2>
+    <p>Book a free 30-minute call. We will audit your current website and tell you exactly where to start with no pitch and no pressure.</p>
+    <div class="acts"><button class="btn bto" onclick="go('contact')">Get My Free Audit</button></div>
+  </div>
+</div>
+<!-- END SERVICES -->
+
+<!-- ==================== HOW WE WORK ==================== -->
+<div class="page" id="page-how">
+  <div class="phero">
+    <div class="inn fu">
+      <span class="sl dk" style="margin-bottom:16px">The Process</span>
+      <h1>We audit first. <em class="hi">Then we build.</em></h1>
+      <p>We never pitch before we understand your situation. We earn your trust by showing you the problems before we propose any solution.</p>
+    </div>
+  </div>
+
+  <section class="sec" style="background:#fff">
+    <div class="inn">
+      <div class="sh fu" style="max-width:640px"><span class="sl">Our Process</span><h2>From audit to live site, <em class="hi">clear at every step.</em></h2></div>
+      <div style="max-width:680px">
+        <div class="pstep fu">
+          <div class="pnode">1</div>
+          <div class="pbody">
+            <h3>Free Website and SEO Audit</h3>
+            <p>Before we ever contact you, we review your existing website covering speed, UX, on-page SEO, mobile experience, conversion bottlenecks and keyword gaps. You receive a clear report with specific findings.</p>
+            <div class="audit-chips">
+              <span class="audit-chip">PageSpeed</span>
+              <span class="audit-chip">Core Web Vitals</span>
+              <span class="audit-chip">On-page SEO</span>
+              <span class="audit-chip">Mobile UX</span>
+              <span class="audit-chip">CTAs and Navigation</span>
+              <span class="audit-chip">Keyword Gaps</span>
+              <span class="audit-chip">Competitor Benchmarking</span>
+            </div>
+            <div class="pnote">⚡ Completely free. No obligation whatsoever.</div>
+          </div>
+        </div>
+        <div class="pstep fu">
+          <div class="pnode">2</div>
+          <div class="pbody">
+            <h3>Share the Audit With You</h3>
+            <p>We send you the full audit report. You see exactly where the issues are, covering speed problems, UX friction and SEO gaps, before a single rupee is involved. It is useful to you regardless of whether we work together.</p>
+          </div>
+        </div>
+        <div class="pstep fu">
+          <div class="pnode">3</div>
+          <div class="pbody">
+            <h3>Discovery Call — 30 Minutes</h3>
+            <p>A focused call to understand your business, target audience, competitors and what success looks like for you. No pitch, just listening and asking the right questions.</p>
+            <div class="pchips">
+              <span class="pchip">Target audience</span>
+              <span class="pchip">Key pages and goals</span>
+              <span class="pchip">Top keywords</span>
+              <span class="pchip">Competitors</span>
+              <span class="pchip">Budget and timeline</span>
+            </div>
+          </div>
+        </div>
+        <div class="pstep fu">
+          <div class="pnode">4</div>
+          <div class="pbody">
+            <h3>Custom Proposal</h3>
+            <p>A tailored scope document with specific deliverables, timelines and expected outcomes. Not a generic package. Every proposal is built for your specific business and goals.</p>
+          </div>
+        </div>
+        <div class="pstep fu">
+          <div class="pnode">5</div>
+          <div class="pbody">
+            <h3>Build, Optimise and Grow</h3>
+            <p>We execute the plan and send you a clear monthly report covering keyword rankings, traffic, page speed and lead volume. You stay informed without needing to understand any of the technical detail.</p>
+            <div class="pnote">📊 Monthly report covers keyword rankings, traffic, speed scores and leads generated.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER TRANSFORMATIONS -->
+  <section class="sec" style="background:var(--cr)">
+    <div class="inn">
+      <div class="sh fu" style="text-align:center;max-width:640px;margin:0 auto 52px">
+        <span class="sl">Real Transformations</span>
+        <h2>Websites before us. <em class="hi">Websites after us.</em></h2>
+        <p class="sub" style="margin:12px auto 0">Two real businesses. Real results. Click any screenshot to see it full size.</p>
+      </div>
+      <div class="ba-grid fu">
+
+        <!-- MEDEXUS -->
+        <div class="ba-card">
+          <div class="ba-header">
+            <div>
+              <div class="ba-label">Client 01 &middot; Healthcare &amp; Diagnostics</div>
+              <div class="ba-name">Medexus Diagnostics</div>
+            </div>
+            <span class="ubadge" style="background:#dcfce7;color:#16a34a;border-color:#bbf7d0">✅ Live</span>
+          </div>
+          <div class="ba-body">
+            <div class="ba-side border-r">
+              <div class="ba-tag before">✕ Before</div>
+              <div class="ba-carousel" data-images='["medexus-before.png","medexus-before2.png"]' data-type="before" data-client="Medexus Diagnostics">
+                <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
+                  <img src="medexus-before.png" alt="Medexus Before" loading="lazy">
+                  <span class="ba-zoom">🔍 Click to enlarge</span>
+                </div>
+                <div class="bc-nav">
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),-1)">&#8249;</button>
+                  <span class="bc-count">Image 1 of 2</span>
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),1)">&#8250;</button>
+                </div>
+              </div>
+            </div>
+            <div class="ba-side">
+              <div class="ba-tag after">✓ After</div>
+              <div class="ba-carousel" data-images='["medexus-after.png","medexus-after2.png?v=2"]' data-type="after" data-client="Medexus Diagnostics">
+                <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
+                  <img src="medexus-after.png" alt="Medexus After" loading="lazy">
+                  <span class="ba-zoom">🔍 Click to enlarge</span>
+                </div>
+                <div class="bc-nav">
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),-1)">&#8249;</button>
+                  <span class="bc-count">Image 1 of 2</span>
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),1)">&#8250;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-footer">
+            <div class="ba-changes">
+              <span class="bct">🎨 Full redesign</span>
+              <span class="bct">📱 Mobile-first</span>
+              <span class="bct">🏢 Corporate layout</span>
+              <span class="bct">📈 Lead-gen hero</span>
+              <span class="bct">⭐ Client logo bar</span>
+              <span class="bct">⚡ Fast load</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEC INDIA -->
+        <div class="ba-card">
+          <div class="ba-header">
+            <div>
+              <div class="ba-label">Client 02 &middot; Industrial &amp; Engineering</div>
+              <div class="ba-name">MEC India</div>
+            </div>
+            <span class="ubadge" style="background:#dcfce7;color:#16a34a;border-color:#bbf7d0">✅ Live</span>
+          </div>
+          <div class="ba-body">
+            <div class="ba-side border-r">
+              <div class="ba-tag before">✕ Before</div>
+              <div class="ba-carousel" data-images='["mecindia-before.png","mecindia-before2.png"]' data-type="before" data-client="MEC India">
+                <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
+                  <img src="mecindia-before.png" alt="MEC India Before" loading="lazy">
+                  <span class="ba-zoom">🔍 Click to enlarge</span>
+                </div>
+                <div class="bc-nav">
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),-1)">&#8249;</button>
+                  <span class="bc-count">Image 1 of 2</span>
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),1)">&#8250;</button>
+                </div>
+              </div>
+            </div>
+            <div class="ba-side">
+              <div class="ba-tag after">✓ After</div>
+              <div class="ba-carousel" data-images='["mecindia-after1.png","mecindia-after2.png"]' data-type="after" data-client="MEC India">
+                <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
+                  <img src="mecindia-after1.png" alt="MEC India After" loading="lazy">
+                  <span class="ba-zoom">🔍 Click to enlarge</span>
+                </div>
+                <div class="bc-nav">
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),-1)">&#8249;</button>
+                  <span class="bc-count">Image 1 of 2</span>
+                  <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),1)">&#8250;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-footer">
+            <div class="ba-changes">
+              <span class="bct">🎨 Full redesign</span>
+              <span class="bct">📱 Mobile-first</span>
+              <span class="bct">🏭 Industrial grade</span>
+              <span class="bct">🔍 SEO optimised</span>
+              <span class="bct">⚡ Fast load</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lbx" onclick="closeLbx(event)">
+    <div class="lbx-box">
+      <div class="lbx-head">
+        <span class="lbx-title" id="lbx-title">Before</span>
+        <div class="lbx-nav-group">
+          <button class="lbx-nav" id="lbx-prev" onclick="lbxNav(-1)">&#8249;</button>
+          <button class="lbx-nav" id="lbx-next" onclick="lbxNav(1)">&#8250;</button>
+          <button class="lbx-close" onclick="closeLbxBtn()">✕</button>
+        </div>
+      </div>
+      <div class="lbx-body">
+        <img id="lbx-img" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTHLY PARTNER -->
+  <section class="sec" style="background:var(--wg)">
+    <div class="inn">
+      <div class="sh fu" style="text-align:center;max-width:600px;margin:0 auto 40px">
+        <span class="sl">Monthly Growth Partner</span>
+        <h2>Not a one-time project. <em class="hi">An ongoing partnership.</em></h2>
+        <p class="sub">Every month, we show up — here is exactly what that looks like.</p>
+      </div>
+      <div class="mp-list fu">
+        <div class="mp-item"><span class="mp-icon">🌐</span><div class="mp-txt"><strong>Website Updates</strong><span>CRO and UX improvements from real analytics data</span></div><span class="mp-freq">Monthly</span></div>
+        <div class="mp-item"><span class="mp-icon">🔎</span><div class="mp-txt"><strong>SEO Optimisation</strong><span>On-page, technical and local SEO to keep rankings moving</span></div><span class="mp-freq">Ongoing</span></div>
+        <div class="mp-item"><span class="mp-icon">✍️</span><div class="mp-txt"><strong>SEO Blog Content</strong><span>Keyword-researched posts that drive organic traffic</span></div><span class="mp-freq">2 / month</span></div>
+        <div class="mp-item"><span class="mp-icon">⭐</span><div class="mp-txt"><strong>Review Growth</strong><span>Systematic process to build your 5-star Google reviews</span></div><span class="mp-freq">Ongoing</span></div>
+        <div class="mp-item"><span class="mp-icon">📊</span><div class="mp-txt"><strong>Analytics Report</strong><span>Traffic, rankings, leads and speed — no jargon</span></div><span class="mp-freq">Monthly</span></div>
+        <div class="mp-item"><span class="mp-icon">🔧</span><div class="mp-txt"><strong>Technical Maintenance</strong><span>Plugin updates, security checks and bug fixes</span></div><span class="mp-freq">As needed</span></div>
+        <div class="mp-item"><span class="mp-icon">📍</span><div class="mp-txt"><strong>Google Profile Updates</strong><span>Fresh posts, photos and review replies every week</span></div><span class="mp-freq">Weekly</span></div>
+        <div class="mp-item"><span class="mp-icon">📞</span><div class="mp-txt"><strong>Strategy Call</strong><span>30-min monthly review of performance and next steps</span></div><span class="mp-freq">Monthly</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctab">
+    <h2>Ready for a <em class="hi">free website audit?</em></h2>
+    <p>We will review your site's speed, UX and SEO and give you a clear action plan with no pitch and no commitment.</p>
+    <div class="acts"><button class="btn bto" onclick="go('contact')">Get My Free Audit</button></div>
+  </div>
+</div>
+<!-- END HOW WE WORK -->
+
+<!-- ==================== ABOUT ==================== -->
+<div class="page" id="page-about">
+  <div class="ab-hero">
+    <div class="ab-in inn">
+      <div class="fu">
+        <span class="sl" style="margin-bottom:16px">Our Story</span>
+        <h1>Being the best at what you do means nothing if the <em class="hi">right people cannot find you.</em></h1>
+        <p>We exist to close that gap. Every business we work with has real quality behind it. Our job is to make sure the internet reflects that.</p>
+      </div>
+      <div class="abvis fu">
+        <div class="abq">"A great website that nobody can find is a brochure sitting in a drawer. We fix that."</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" style="background:#fff">
+    <div class="inn story-in fu">
+      <span class="sl" style="margin-bottom:20px">Why HelpLaunch</span>
+      <p>Most web agencies hand over a completed website and disappear. The site looks good, but three months later it still ranks nowhere on Google and generates no enquiries. <strong>The design was never the problem. It was the strategy.</strong></p>
+      <p>We started HelpLaunch because we saw too many business owners paying for beautiful websites that did not work. A website without SEO is invisible. A website with SEO but poor UX does not convert. You need both, built together from the start.</p>
+      <div class="spull">"Your website should answer your customer's question before they even think to ask it. That is what great UX and SEO, done right, actually look like."</div>
+      <p>Everything we do is connected to one question: <strong>will this bring more enquiries to this business?</strong> If the answer is not clearly yes, we do not recommend it.</p>
+      <p>We also believe in earning trust before asking for it. That is why every engagement starts with a free audit. You see exactly where your website is losing customers before you spend a single rupee with us.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--wg)">
+    <div class="inn">
+      <div class="sh fu"><span class="sl">Our Values</span><h2>What we believe <em class="hi">shapes how we work</em></h2></div>
+      <div class="vgrid fu">
+        <div class="vc"><div class="vn">01</div><h3>Performance First</h3><p>A slow website is not a design problem, it is a business problem. Every site we build is optimised for speed, Core Web Vitals and mobile experience before anything else.</p></div>
+        <div class="vc"><div class="vn">02</div><h3>SEO Is Not an Afterthought</h3><p>SEO is built into every page from day one, not bolted on later. Site structure, content and technical setup are all designed with search in mind from the start.</p></div>
+        <div class="vc"><div class="vn">03</div><h3>UX and Conversion Together</h3><p>We do not just design. We design to convert. Every CTA, headline and page layout is considered through the lens of: will this turn a visitor into a customer?</p></div>
+        <div class="vc"><div class="vn">04</div><h3>Radical Transparency</h3><p>You always know what we are doing and why. Monthly reports with real data, no vague updates, no hiding behind jargon and no excuses.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctab">
+    <h2>Want to work with us?</h2>
+    <p>Start with a free website audit. No commitment required, just useful insight into your current digital presence.</p>
+    <div class="acts"><button class="btn bto" onclick="go('contact')">Get My Free Audit</button></div>
+  </div>
+</div>
+<!-- END ABOUT -->
+
+<!-- ==================== CONTACT ==================== -->
+<div class="page" id="page-contact">
+  <div class="phero">
+    <div class="inn fu">
+      <span class="sl dk" style="margin-bottom:16px">Get In Touch</span>
+      <h1>Let's talk about <em class="hi">your website.</em></h1>
+      <p>Start with a free audit or book a 30-minute call. No jargon, no pressure and no hard sell.</p>
+    </div>
+  </div>
+
+  <section class="sec" style="background:#fff">
+    <div class="ct-grid inn">
+      <div class="fu">
+        <h2>Talk to us</h2>
+        <p>We respond to every message within 24 hours on working days. We will start by reviewing your current website before we even reply.</p>
+        <div class="cd"><div class="cdi">📲</div><div class="cdb"><strong>WhatsApp</strong><a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX XXXXX</a></div></div>
+        <div class="cd"><div class="cdi">📧</div><div class="cdb"><strong>Email</strong><a href="mailto:hello@helplaunch.in">hello@helplaunch.in</a></div></div>
+        <div class="cd"><div class="cdi">💼</div><div class="cdb"><strong>LinkedIn</strong><a href="#" target="_blank">HelpLaunch</a></div></div>
+        <div class="wnext">
+          <h4>What happens next?</h4>
+          <div class="wns"><div class="wnn">1</div><p>We review your message and look at your current website covering speed, SEO and UX.</p></div>
+          <div class="wns"><div class="wnn">2</div><p>We prepare a free mini audit with specific findings from your site.</p></div>
+          <div class="wns"><div class="wnn">3</div><p>We book a 30-minute call to walk you through it and discuss next steps.</p></div>
+        </div>
+      </div>
+      <div class="cfw fu">
+        <div class="cfh"><h3>Get Your Free Website Audit</h3><p>Share your website URL and we will get back to you within 24 hours with specific findings.</p></div>
+        <form onsubmit="submitForm(event)">
+          <div class="frow">
+            <div class="fg"><label>Your Name</label><input type="text" placeholder="Ramesh Sharma" required></div>
+            <div class="fg"><label>Business Name</label><input type="text" placeholder="Sharma and Co." required></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label>Phone or WhatsApp</label><input type="tel" placeholder="+91 98765 43210" required></div>
+            <div class="fg"><label>City</label><input type="text" placeholder="Pune" required></div>
+          </div>
+          <div class="fg"><label>Current Website URL</label><input type="url" placeholder="https://yourbusiness.com" required></div>
+          <div class="fg"><label>What is your main goal?</label>
+            <select>
+              <option value="">Select your main goal...</option>
+              <option>My website is slow or outdated</option>
+              <option>I am not ranking on Google</option>
+              <option>I get traffic but no enquiries</option>
+              <option>I need a new website from scratch</option>
+              <option>I want a full digital growth plan</option>
+            </select>
+          </div>
+          <div class="fg"><label>Anything else to share?</label><textarea placeholder="e.g. We have traffic but our bounce rate is 80% and nobody fills the contact form..."></textarea></div>
+          <button type="submit" class="fsub">Send My Free Audit Request</button>
+          <div class="smsg" id="smsg"><p>Received! We will review your site and get back to you within 24 hours.</p></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctab">
+    <h2>Prefer to just WhatsApp us?</h2>
+    <p>Drop us a message directly. Share your website URL and we will review it and reply with our initial thoughts.</p>
+    <div class="acts">
+      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20a%20free%20website%20audit%20for%20my%20business." class="btn bto" target="_blank">WhatsApp Us Now</a>
+    </div>
+  </div>
+</div>
+<!-- END CONTACT -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg-grid inn">
+    <div class="fb">
+      <div class="logo" onclick="go('home')" style="color:#fff;font-size:1.3rem;margin-bottom:12px">Help<span>Launch</span><span class="dm"></span></div>
+      <p>We design high-performance websites, optimise them for search, and craft user experiences that convert visitors into customers.</p>
+    </div>
+    <div class="fc">
+      <h5>Active Services</h5>
+      <ul>
+        <li><a onclick="go('services')">Website Design</a></li>
+        <li><a onclick="go('services')">UX and UI Optimisation</a></li>
+        <li><a onclick="go('services')">SEO</a></li>
+        <li><a onclick="go('services')">Online Reputation</a></li>
+        <li><a onclick="go('services')">Analytics Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h5>More Services</h5>
+      <ul>
+        <li><a onclick="go('services')">CRM Setup</a></li>
+        <li><a onclick="go('services')">Content Marketing</a></li>
+        <li><a onclick="go('services')">Google Business Profile</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h5>Company</h5>
+      <ul>
+        <li><a onclick="go('about')">About Us</a></li>
+        <li><a onclick="go('how')">How We Work</a></li>
+        <li><a onclick="go('contact')">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot inn">
+    <p>2025 HelpLaunch. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function go(p){
+  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nl a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.p===p);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.querySelectorAll('#page-'+p+' .fu:not(.in)').forEach(el=>obs.observe(el));
+}
+function toggleNav(){
+  document.getElementById('mnav').classList.toggle('open');
+}
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('smsg').classList.add('show');
+  e.target.reset();
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('in'),i*70);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+/* ── CAROUSEL ── */
+const bcState={};
+let lbxCarousel=null;
+
+function bcInit(){
+  let idx=0;
+  document.querySelectorAll('.ba-carousel').forEach(el=>{
+    const id='bc'+idx++;
+    el.dataset.bcid=id;
+    const images=JSON.parse(el.dataset.images||'[]');
+    bcState[id]={images,current:0};
+    if(images.length<=1) el.querySelector('.bc-nav').classList.add('hidden');
+    bcUpdate(el);
+  });
+}
+
+function bcUpdate(el){
+  const s=bcState[el.dataset.bcid];
+  const img=el.querySelector('img');
+  const counter=el.querySelector('.bc-count');
+  img.style.opacity='0';
+  setTimeout(()=>{img.src=s.images[s.current];img.style.opacity='1';},80);
+  if(counter) counter.textContent='Image '+(s.current+1)+' of '+s.images.length;
+}
+
+function bcNav(el,dir){
+  const s=bcState[el.dataset.bcid];
+  s.current=(s.current+dir+s.images.length)%s.images.length;
+  bcUpdate(el);
+}
+
+function openCarouselLbx(el){
+  lbxCarousel=el;
+  lbxRefresh();
+  document.getElementById('lbx').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function lbxRefresh(){
+  if(!lbxCarousel) return;
+  const s=bcState[lbxCarousel.dataset.bcid];
+  const type=lbxCarousel.dataset.type;
+  const client=lbxCarousel.dataset.client;
+  const label=type==='before'?'Before':'After';
+  const lbxImg=document.getElementById('lbx-img');
+  lbxImg.style.opacity='0';
+  setTimeout(()=>{lbxImg.src=s.images[s.current];lbxImg.style.opacity='1';},80);
+  document.getElementById('lbx-title').textContent=client+' — '+label+', Image '+(s.current+1)+' of '+s.images.length;
+  document.getElementById('lbx-title').className='lbx-title '+type;
+  const multi=s.images.length>1;
+  document.getElementById('lbx-prev').disabled=!multi;
+  document.getElementById('lbx-next').disabled=!multi;
+}
+
+function lbxNav(dir){
+  if(!lbxCarousel) return;
+  bcNav(lbxCarousel,dir);
+  lbxRefresh();
+}
+
+function closeLbx(e){if(e.target.id==='lbx') closeLbxBtn();}
+function closeLbxBtn(){
+  document.getElementById('lbx').classList.remove('open');
+  document.body.style.overflow='';
+  lbxCarousel=null;
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeLbxBtn();
+  if(e.key==='ArrowLeft') lbxNav(-1);
+  if(e.key==='ArrowRight') lbxNav(1);
+});
+bcInit();
+</script>
+</body>
+</html>
