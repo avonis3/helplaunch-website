@@ -1426,7 +1426,8 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 </footer>
 
 <script>
-function go(p){
+function go(p, updateHistory){
+  if(!document.getElementById('page-'+p)) return;
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   document.querySelectorAll('.nl a').forEach(a=>{
@@ -1434,7 +1435,18 @@ function go(p){
   });
   window.scrollTo({top:0,behavior:'smooth'});
   document.querySelectorAll('#page-'+p+' .fu:not(.in)').forEach(el=>obs.observe(el));
+  if(updateHistory!==false) history.pushState(null,'','#'+p);
 }
+// Load page from URL hash on arrival
+(function(){
+  const h=window.location.hash.slice(1);
+  if(h && document.getElementById('page-'+h)) go(h,false);
+})();
+// Handle browser back/forward
+window.addEventListener('popstate',function(){
+  const h=window.location.hash.slice(1);
+  go(h||'home',false);
+});
 function toggleNav(){
   document.getElementById('mnav').classList.toggle('open');
 }
