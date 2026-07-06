@@ -296,6 +296,46 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 .smsg{display:none;background:var(--gl);border:1.5px solid #86EFAC;border-radius:var(--rs);padding:16px;text-align:center;margin-top:12px}
 .smsg.show{display:block}.smsg p{color:#15803D;font-size:.9rem;font-weight:600;margin:0}
 
+/* CAREERS */
+.car-phero{background:var(--ch);padding:64px 6% 56px;text-align:center}
+.car-phero .sl{background:rgba(249,115,22,.18);color:var(--o);margin-bottom:16px}
+.car-phero h1{font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:12px;line-height:1.2}
+.car-phero p{color:rgba(255,255,255,.65);font-size:1rem;max-width:500px;margin:0 auto 28px}
+.car-phero a.email-cta{display:inline-flex;align-items:center;gap:8px;background:var(--o);color:#fff;padding:13px 28px;border-radius:99px;font-weight:700;font-size:.95rem;text-decoration:none;transition:opacity .2s}
+.car-phero a.email-cta:hover{opacity:.88}
+.job-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;max-width:860px;margin:0 auto 48px}
+.job-head{background:var(--ch);padding:28px 36px}
+.job-head .jbadge{display:inline-block;background:var(--o);color:#fff;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:4px 12px;border-radius:99px;margin-bottom:14px}
+.job-head h2{color:#fff;font-size:1.7rem;margin-bottom:10px;line-height:1.2}
+.job-head .jmeta{display:flex;gap:10px;flex-wrap:wrap}
+.jmpill{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:.75rem;font-weight:600;padding:4px 14px;border-radius:99px}
+.job-body{padding:32px 36px}
+.job-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
+.job-sec h4{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--o);margin-bottom:12px}
+.job-sec ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.job-sec ul li{display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--ch);line-height:1.45}
+.job-sec ul li::before{content:"✓";color:var(--o);font-weight:800;flex-shrink:0;margin-top:2px}
+.job-earn{background:var(--ch);border-radius:var(--rs);padding:22px 24px;margin-bottom:24px}
+.job-earn .earn-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.5);margin-bottom:6px}
+.job-earn .earn-amt{font-size:1.7rem;font-weight:900;color:var(--o);line-height:1.15}
+.job-earn .earn-note{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:3px}
+.job-earn .earn-comm{font-size:.95rem;font-weight:800;color:#fff;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+.job-4grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.j4c{border:1px solid var(--bd);border-radius:var(--rs);padding:16px 12px;background:var(--wg);text-align:center}
+.j4c .j4ico{font-size:1.5rem;margin-bottom:8px}
+.j4c h5{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin-bottom:8px}
+.j4c ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
+.j4c ul li{font-size:.74rem;color:var(--ch);line-height:1.4}
+.job-apply{background:var(--ol);border:1.5px solid var(--o);border-radius:var(--rs);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.job-apply p{font-size:.9rem;font-weight:600;color:var(--ch);margin:0}
+.job-apply p span{color:var(--o)}
+.car-open{background:var(--wg);padding:60px 6%}
+.car-open .inn{max-width:860px;margin:0 auto}
+.car-footer{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:32px 36px;max-width:860px;margin:0 auto;text-align:center}
+.car-footer h3{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.car-footer p{color:var(--mu);font-size:.9rem;margin-bottom:20px}
+.car-footer a{color:var(--o);font-weight:700;text-decoration:none}
+
 /* RESPONSIVE */
 @media(max-width:920px){
   .nav-right,.ncta{display:none}.hbg{display:flex}
@@ -329,6 +369,13 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .mp-item:last-child{border-bottom:none}
   .proc-layout{grid-template-columns:1fr}
   .proc-sticky{display:none}
+  /* Careers 920px */
+  .job-cols{grid-template-columns:1fr}
+  .job-4grid{grid-template-columns:1fr 1fr}
+  .car-phero{padding:48px 5% 40px}
+  .car-open{padding:48px 5%}
+  .job-head{padding:22px 20px}
+  .job-body{padding:22px 20px}
 }
 @media(max-width:640px){
   nav .logo img{height:80px;margin-left:-20px}
@@ -369,6 +416,15 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   /* Before/After */
   .ba-grid{grid-template-columns:1fr}
   .ba-img-wrap img,.ba-placeholder{height:190px}
+  /* Careers mobile */
+  .job-head h2{font-size:1.25rem}
+  .car-footer{padding:24px 20px}
+  .car-phero{padding:40px 5% 36px}
+  .car-open{padding:40px 5%}
+  .job-apply{flex-direction:column;align-items:stretch}
+  .job-apply .btn{text-align:center;justify-content:center}
+  .earn-amt{font-size:1.4rem}
+  .job-4grid{gap:10px}
   /* Carousel */
   .bc-btn{width:36px;height:36px;font-size:1.2rem}
   .bc-count{font-size:.7rem}
@@ -494,6 +550,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <li><a onclick="go('home')" data-p="home" class="active">Home</a></li>
       <li><a onclick="go('services')" data-p="services">Services</a></li>
       <li><a onclick="go('how')" data-p="how">How We Work</a></li>
+      <li><a onclick="go('careers')" data-p="careers">Careers</a></li>
       <li><a onclick="go('contact')" data-p="contact">Contact</a></li>
     </ul>
     <button class="ncta" onclick="go('contact')">Free Consultation</button>
@@ -504,6 +561,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <a onclick="go('home');toggleNav()">Home</a>
   <a onclick="go('services');toggleNav()">Services</a>
   <a onclick="go('how');toggleNav()">How We Work</a>
+  <a onclick="go('careers');toggleNav()">Careers</a>
   <a onclick="go('contact');toggleNav()">Contact</a>
   <button onclick="go('contact');toggleNav()" class="mc">Get Free Consultation</button>
 </div>
@@ -1175,7 +1233,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
         <h2>Talk to us</h2>
         <p>We respond to every message within 24 hours on working days. We will start by reviewing your current website before we even reply.</p>
         <div class="cd"><div class="cdi">📲</div><div class="cdb"><strong>WhatsApp</strong><a href="https://wa.me/918291649511" target="_blank">+91 82916 49511</a></div></div>
-        <div class="cd"><div class="cdi">📧</div><div class="cdb"><strong>Email</strong><a href="mailto:hello@helplaunch.in">hello@helplaunch.in</a></div></div>
+        <div class="cd"><div class="cdi">📧</div><div class="cdb"><strong>Email</strong><a href="mailto:info@helplaunch.in">info@helplaunch.in</a></div></div>
         <div class="wnext">
           <h4>What happens next?</h4>
           <div class="wns"><div class="wnn">1</div><p>We review your message and look at your current website covering speed, SEO and UX.</p></div>
@@ -1223,6 +1281,111 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 </div>
 <!-- END CONTACT -->
 
+<!-- ==================== CAREERS ==================== -->
+<div class="page" id="page-careers">
+  <div class="car-phero">
+    <div class="inn">
+      <span class="sl">We Are Hiring</span>
+      <h1>Join HelpLaunch.<br>Grow with us.</h1>
+      <p>We're a small, ambitious team helping Indian businesses win online. If you're hungry, driven, and want real-world experience — we'd love to hear from you.</p>
+      <a href="mailto:info@helplaunch.in" class="email-cta">📧 info@helplaunch.in</a>
+    </div>
+  </div>
+
+  <div class="car-open">
+    <div class="inn">
+      <div class="sh fu" style="margin-bottom:36px"><span class="sl">Current Opening</span><h2>We're hiring for <em class="hi">one role right now</em></h2></div>
+
+      <div class="job-card fu">
+        <div class="job-head">
+          <div class="jbadge">Open Now</div>
+          <h2>Business Development Intern <span style="color:var(--o)">(Sales)</span></h2>
+          <div class="jmeta">
+            <span class="jmpill">🏠 Work From Home</span>
+            <span class="jmpill">⏰ Part Time</span>
+            <span class="jmpill">💸 Commission Based</span>
+          </div>
+        </div>
+
+        <div class="job-body">
+          <div class="job-cols">
+            <div class="job-sec">
+              <h4>What You'll Do</h4>
+              <ul>
+                <li>Reach out to potential clients via calls, WhatsApp, LinkedIn and email</li>
+                <li>Understand their requirements and introduce our services</li>
+                <li>Schedule meetings for the founders</li>
+                <li>Follow up with leads and close deals</li>
+                <li>Maintain records of prospects and conversations</li>
+              </ul>
+            </div>
+            <div>
+              <div class="job-earn">
+                <div class="earn-tag">Earnings Potential</div>
+                <div class="earn-amt">₹10,000 – ₹60,000</div>
+                <div class="earn-note">per month (commission based)</div>
+                <div class="earn-comm">🔥 15% Commission on Every Converted Client</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-4grid">
+            <div class="j4c">
+              <div class="j4ico">💬</div>
+              <h5>Who Can Apply</h5>
+              <ul>
+                <li>Good communication skills</li>
+                <li>Self-motivated</li>
+                <li>No prior experience needed</li>
+                <li>Students & freshers welcome</li>
+              </ul>
+            </div>
+            <div class="j4c">
+              <div class="j4ico">🎯</div>
+              <h5>Who Should Apply</h5>
+              <ul>
+                <li>Enjoys talking to people</li>
+                <li>Likes building relationships</li>
+                <li>Wants performance-based earnings</li>
+              </ul>
+            </div>
+            <div class="j4c">
+              <div class="j4ico">💻</div>
+              <h5>Work Details</h5>
+              <ul>
+                <li>Work from Home</li>
+                <li>Part Time</li>
+                <li>Flexible Hours</li>
+              </ul>
+            </div>
+            <div class="j4c">
+              <div class="j4ico">📈</div>
+              <h5>Why Join Us</h5>
+              <ul>
+                <li>Learn real-world sales</li>
+                <li>Work with a growing team</li>
+                <li>Unlimited earning potential</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job-apply">
+            <p>Interested? Email us at <span>info@helplaunch.in</span> with the subject line <span>"BD Intern Application"</span></p>
+            <a href="mailto:info@helplaunch.in?subject=BD Intern Application" class="btn bto">Apply Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-footer fu">
+        <h3>Don't see a role that fits?</h3>
+        <p>We're always open to meeting talented people. Drop us a line and tell us how you can add value.</p>
+        <a href="mailto:info@helplaunch.in">info@helplaunch.in</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CAREERS -->
+
 <!-- FOOTER -->
 <footer>
   <div class="fg-grid inn">
@@ -1252,6 +1415,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <h5>Company</h5>
       <ul>
         <li><a onclick="go('how')">How We Work</a></li>
+        <li><a onclick="go('careers')">Careers</a></li>
         <li><a onclick="go('contact')">Contact</a></li>
       </ul>
     </div>
