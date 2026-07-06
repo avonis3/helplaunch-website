@@ -1437,16 +1437,6 @@ function go(p, updateHistory){
   document.querySelectorAll('#page-'+p+' .fu:not(.in)').forEach(el=>obs.observe(el));
   if(updateHistory!==false) history.pushState(null,'','#'+p);
 }
-// Load page from URL hash on arrival
-(function(){
-  const h=window.location.hash.slice(1);
-  if(h && document.getElementById('page-'+h)) go(h,false);
-})();
-// Handle browser back/forward
-window.addEventListener('popstate',function(){
-  const h=window.location.hash.slice(1);
-  go(h||'home',false);
-});
 function toggleNav(){
   document.getElementById('mnav').classList.toggle('open');
 }
@@ -1548,6 +1538,30 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight') lbxNav(1);
 });
 bcInit();
+// Deep linking — must run after obs is defined
+(function(){
+  const h=window.location.hash.slice(1);
+  if(h && document.getElementById('page-'+h)){
+    go(h,false);
+    // IntersectionObserver never fires for elements that were display:none on load,
+    // so force them visible after the browser has painted the page
+    setTimeout(function(){
+      document.querySelectorAll('#page-'+h+' .fu').forEach(function(el){
+        el.classList.add('in');
+      });
+    },150);
+  }
+})();
+window.addEventListener('popstate',function(){
+  const h=window.location.hash.slice(1);
+  go(h||'home',false);
+  setTimeout(function(){
+    const t=window.location.hash.slice(1)||'home';
+    document.querySelectorAll('#page-'+t+' .fu').forEach(function(el){
+      el.classList.add('in');
+    });
+  },150);
+});
 </script>
 </body>
 </html>
