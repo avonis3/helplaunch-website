@@ -540,7 +540,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 </head>
 <body>
 
-<a href="https://wa.me/918291649511" class="wa" title="WhatsApp" target="_blank" rel="noopener">💬</a>
 
 <!-- NAV -->
 <nav>
@@ -1232,7 +1231,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <div class="fu">
         <h2>Talk to us</h2>
         <p>We respond to every message within 24 hours on working days. We will start by reviewing your current website before we even reply.</p>
-        <div class="cd"><div class="cdi">📲</div><div class="cdb"><strong>WhatsApp</strong><a href="https://wa.me/918291649511" target="_blank">+91 82916 49511</a></div></div>
         <div class="cd"><div class="cdi">📧</div><div class="cdb"><strong>Email</strong><a href="mailto:info@helplaunch.in">info@helplaunch.in</a></div></div>
         <div class="wnext">
           <h4>What happens next?</h4>
@@ -1271,13 +1269,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
     </div>
   </section>
 
-  <div class="ctab">
-    <h2>Prefer to just WhatsApp us?</h2>
-    <p>Drop us a message directly. Share your website URL and we will review it and reply with our initial thoughts.</p>
-    <div class="acts">
-      <a href="https://wa.me/918291649511?text=Hi%2C%20I%20would%20like%20a%20free%20website%20audit%20for%20my%20business." class="btn bto" target="_blank">WhatsApp Us Now</a>
-    </div>
-  </div>
 </div>
 <!-- END CONTACT -->
 
@@ -1449,10 +1440,10 @@ function submitForm(e){
     method:'POST',body:new FormData(form),headers:{Accept:'application/json'}
   }).then(r=>{
     if(r.ok){document.getElementById('smsg').classList.add('show');form.reset();}
-    else{alert('Something went wrong. Please WhatsApp us instead.');}
+    else{alert('Something went wrong. Please email us at info@helplaunch.in');}
     btn.disabled=false;btn.textContent='Send My Free Audit Request';
   }).catch(()=>{
-    alert('Network error. Please WhatsApp us instead.');
+    alert('Network error. Please email us at info@helplaunch.in');
     btn.disabled=false;btn.textContent='Send My Free Audit Request';
   });
 }
