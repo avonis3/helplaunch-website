@@ -449,10 +449,10 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .mock-laptop{max-width:100%;width:100%}
   .sp-grid{display:flex!important;overflow-x:auto;gap:16px;padding-bottom:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;grid-template-columns:unset}
   .sp-grid::-webkit-scrollbar{display:none}
-  .sp-grid .spc{min-width:260px;flex-shrink:0;scroll-snap-align:start}
+  .sp-grid .spc{width:min(260px,75vw);min-width:unset;flex-shrink:0;flex-grow:0;scroll-snap-align:start;overflow:hidden}
   .tgrid{display:flex!important;overflow-x:auto;gap:16px;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;grid-template-columns:unset}
   .tgrid::-webkit-scrollbar{display:none}
-  .tgrid .tcard{min-width:min(300px,82vw);flex-shrink:0;scroll-snap-align:start}
+  .tgrid .tcard{width:min(300px,82vw);min-width:unset;flex-shrink:0;flex-grow:0;scroll-snap-align:start;overflow:hidden}
   .mp-list{grid-template-columns:1fr !important;overflow:visible}
   .mp-item:nth-child(odd){border-right:none}
   .mp-item:nth-last-child(-n+2){border-bottom:1px solid var(--bd)}
@@ -478,7 +478,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .mock-phone{width:100px;right:4px}
   .mock-pscreen{height:170px}
   .sb{padding:48px 5%}
-  .g2,.sp-grid{grid-template-columns:1fr}
+  .g2{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .fg-grid{grid-template-columns:1fr}
   .svcs-grid{grid-template-columns:1fr}
