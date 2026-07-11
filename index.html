@@ -420,8 +420,9 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .g3,.ggrid,.ct-grid,.svcs-grid,.phil-pillars{grid-template-columns:1fr}
   .hero-in,.prob-in,.ab-in{grid-template-columns:1fr;gap:0}
   .hero-in{min-height:auto;padding:0;gap:0}
-  .hl{padding:48px 0 0}
-  .hbtns{margin-bottom:0}
+  .hl{padding:48px 5% 0;text-align:center}
+  .hbtns{margin-bottom:0;justify-content:center}
+  .hvo{display:none!important}
   .fg-grid{grid-template-columns:1fr 1fr}
   .sb-in,.sb-in.flip{grid-template-columns:1fr;direction:ltr}
   .sbvis{position:static}
@@ -439,10 +440,19 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .ctbl{min-width:560px}
   .phero{padding:52px 6% 60px;clip-path:none}
   .phil-in{text-align:left}
+  .track{animation-duration:15s}
   .prob,.phil{padding:56px 6%}
-  .prob-visual{padding-bottom:70px}
-  .mock-phone{right:0}
+  .prob-visual::before,.prob-visual::after{display:none}
+  .mock-screen{height:210px}
   .sb{padding:60px 6%}
+  .sec{padding:60px 5%}
+  .mock-laptop{max-width:100%;width:100%}
+  .sp-grid{display:flex!important;overflow-x:auto;gap:16px;padding-bottom:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;grid-template-columns:unset}
+  .sp-grid::-webkit-scrollbar{display:none}
+  .sp-grid .spc{min-width:260px;flex-shrink:0;scroll-snap-align:start}
+  .tgrid{display:flex!important;overflow-x:auto;gap:16px;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;grid-template-columns:unset}
+  .tgrid::-webkit-scrollbar{display:none}
+  .tgrid .tcard{min-width:min(300px,82vw);flex-shrink:0;scroll-snap-align:start}
   .mp-list{grid-template-columns:1fr !important;overflow:visible}
   .mp-item:nth-child(odd){border-right:none}
   .mp-item:nth-last-child(-n+2){border-bottom:1px solid var(--bd)}
@@ -459,7 +469,9 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 }
 @media(max-width:640px){
   nav .logo img{height:80px;margin-left:-20px}
-  .hl{padding:28px 0 0}
+  .hl{padding:52px 5% 52px}
+  .sp-grid{display:flex!important}
+  .hero h1{font-size:1.75rem;line-height:1.2}
   .sec{padding:44px 5%}
   .prob,.phil{padding:44px 5%}
   .prob-visual{padding-bottom:60px}
@@ -529,6 +541,10 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .pstep:not(:last-child)::after{left:19px;top:44px}
   /* Stat cards stacked on mobile */
   .proc-glance{display:none}
+  /* Mobile-specific speed & sizing fixes */
+  .track{animation-duration:11s}
+  .mock-screen{height:170px}
+  footer .fb a img{height:100px!important}
 }
 
 /* ── BEFORE / AFTER LIGHTBOX ── */
@@ -740,7 +756,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <section class="sec" style="background:#fff">
     <div class="inn">
       <div class="sh fu"><span class="sl">What Clients Say</span><h2>Businesses already <em class="hi">growing with us</em></h2><p class="sub">Real results from real clients.</p></div>
-      <div class="g3">
+      <div class="g3 tgrid">
         <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"HelpLaunch rebuilt our website and within 45 days we were ranking on the first page of Google for our top 3 keywords. The SEO work alone brought us 12 new clients in the first month."</blockquote><div class="tauth"><div class="tav">RS</div><div class="tin"><strong>Ramesh S.</strong><span>Hardware Store, Pune</span></div></div></div>
         <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"Our old website took 8 seconds to load on mobile. HelpLaunch redesigned it, got our PageSpeed to 94, and our bounce rate dropped by 40% in the first month. More enquiries from the same traffic."</blockquote><div class="tauth"><div class="tav">PM</div><div class="tin"><strong>Priya M.</strong><span>Nutrition Clinic, Surat</span></div></div></div>
         <div class="tcard fu"><div class="tstars">★★★★★</div><blockquote>"I had a website but it was not converting. They revamped the UX, rewrote the copy, and added clear CTAs. Our consultation bookings doubled within 6 weeks with no increase in ad spend."</blockquote><div class="tauth"><div class="tav">DK</div><div class="tin"><strong>Dr. Kavita N.</strong><span>Dermatology Clinic, Nagpur</span></div></div></div>
@@ -1189,16 +1205,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               </div>
             </div>
           </div>
-          <div class="ba-footer">
-            <div class="ba-changes">
-              <span class="bct">🎨 Full redesign</span>
-              <span class="bct">📱 Mobile-first</span>
-              <span class="bct">🏢 Corporate layout</span>
-              <span class="bct">📈 Lead-gen hero</span>
-              <span class="bct">⭐ Client logo bar</span>
-              <span class="bct">⚡ Fast load</span>
-            </div>
-          </div>
         </div>
 
         <!-- MEC INDIA -->
@@ -1238,15 +1244,6 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
                   <button class="bc-btn" onclick="event.stopPropagation();bcNav(this.closest('.ba-carousel'),1)">&#8250;</button>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="ba-footer">
-            <div class="ba-changes">
-              <span class="bct">🎨 Full redesign</span>
-              <span class="bct">📱 Mobile-first</span>
-              <span class="bct">🏭 Industrial grade</span>
-              <span class="bct">🔍 SEO optimised</span>
-              <span class="bct">⚡ Fast load</span>
             </div>
           </div>
         </div>
@@ -1644,6 +1641,30 @@ bcInit();
     },150);
   }
 })();
+// Services card carousel auto-scroll (mobile only)
+(function(){
+  function initServiceScroll(){
+    var grid=document.querySelector('.sp-grid');
+    if(!grid||window.innerWidth>920) return;
+    var timer,paused=false;
+    function next(){
+      if(paused) return;
+      var card=grid.querySelector('.spc');
+      if(!card) return;
+      var step=card.offsetWidth+16;
+      var maxL=grid.scrollWidth-grid.clientWidth;
+      var newL=grid.scrollLeft+step>maxL-4?0:grid.scrollLeft+step;
+      grid.scrollTo({left:newL,behavior:'smooth'});
+    }
+    function start(){clearInterval(timer);timer=setInterval(next,4500);}
+    grid.addEventListener('touchstart',function(){paused=true;clearInterval(timer);},{passive:true});
+    grid.addEventListener('touchend',function(){setTimeout(function(){paused=false;start();},3000);},{passive:true});
+    start();
+    return timer;
+  }
+  window.addEventListener('load',initServiceScroll);
+})();
+
 // Laptop mockup auto-scroller
 (function(){
   const slides=[
