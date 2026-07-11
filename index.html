@@ -2,8 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>HelpLaunch — Website Design, SEO and UX for Growing Businesses</title>
-<meta name="description" content="We build high-performance websites, optimise for search engines, and craft exceptional user experiences that turn visitors into customers."/>
+<title>HelpLaunch — Website Design, SEO &amp; UX Optimisation for Growing Indian Businesses</title>
+<meta name="description" content="HelpLaunch builds high-performance websites, drives SEO growth, and optimises UX for small and medium businesses across India. Get your free website audit today."/>
+<!-- Canonical -->
+<link rel="canonical" href="https://www.helplaunch.in/" id="canonical-tag"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="apple-touch-icon" href="/favicon.png"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.helplaunch.in/" id="og-url"/>
+<meta property="og:title" content="HelpLaunch — Website Design, SEO &amp; UX for Growing Businesses" id="og-title"/>
+<meta property="og:description" content="HelpLaunch builds high-performance websites, drives SEO growth, and optimises UX for small and medium businesses across India. Free website audit available." id="og-desc"/>
+<meta property="og:image" content="https://www.helplaunch.in/helplaunch_logo.png"/>
+<meta property="og:site_name" content="HelpLaunch"/>
+<meta property="og:locale" content="en_IN"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HelpLaunch — Website Design, SEO &amp; UX for Growing Businesses"/>
+<meta name="twitter:description" content="HelpLaunch builds high-performance websites, drives SEO growth, and optimises UX for small and medium businesses across India."/>
+<meta name="twitter:image" content="https://www.helplaunch.in/helplaunch_logo.png"/>
+<!-- Structured Data: ProfessionalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "HelpLaunch",
+  "url": "https://www.helplaunch.in/",
+  "logo": "https://www.helplaunch.in/helplaunch_logo.png",
+  "description": "HelpLaunch builds high-performance websites, optimises them for search engines, and crafts exceptional user experiences that turn visitors into customers.",
+  "email": "info@helplaunch.in",
+  "areaServed": "IN",
+  "knowsLanguage": "en",
+  "serviceType": ["Website Design", "SEO", "UX Optimisation", "Google Business Profile", "Online Reputation Management", "Analytics Dashboard"],
+  "sameAs": []
+}
+</script>
+<!-- Structured Data: JobPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Business Development Intern (Sales)",
+  "description": "Join HelpLaunch as a Business Development Intern (Sales). Help grow our client base, learn digital marketing sales, and get real-world experience with a fast-growing agency.",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "HelpLaunch",
+    "sameAs": "https://www.helplaunch.in/"
+  },
+  "employmentType": "INTERN",
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "datePosted": "2025-01-01",
+  "validThrough": "2025-12-31",
+  "directApply": true
+}
+</script>
+<!-- GA4: Replace G-XXXXXXXXXX with your Measurement ID from Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -19,7 +79,7 @@ button,a,[onclick]{touch-action:manipulation}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cr);color:var(--tx);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--ch)}
-h1{font-size:clamp(2rem,5vw,3.4rem)}h2{font-size:clamp(1.7rem,3.5vw,2.6rem)}
+h1{font-size:clamp(2rem,5vw,3.4rem)}h2{font-size:clamp(1.7rem,3.5vw,2.6rem)}.phero h2{font-size:clamp(2rem,5vw,3.4rem)}
 h3{font-size:1.1rem;font-weight:700}p{color:var(--mu);line-height:1.75}a{text-decoration:none}
 .hi{color:var(--o);font-style:normal}
 
@@ -95,7 +155,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.94);backdrop-
 
 /* PAGE HERO */
 .phero{background:var(--ch);padding:88px 6% 100px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
-.phero h1{color:#fff;margin-bottom:14px}.phero p{color:rgba(255,255,255,.6);max-width:580px;font-size:1.05rem}
+.phero h1,.phero h2{color:#fff;margin-bottom:14px}.phero p{color:rgba(255,255,255,.6);max-width:580px;font-size:1.05rem}
 
 /* FOOTER */
 footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
@@ -144,10 +204,27 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 .prob-text blockquote{font-size:1.1rem;font-weight:700;color:var(--ch);line-height:1.55;border-left:4px solid var(--o);padding-left:20px;margin:24px 0;font-style:normal}
 .prob-text p{margin-bottom:16px;font-size:.95rem}
 .prob-text .prob-cta{margin-top:32px}
-.vs-c{border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-.vs-c.bad{background:#FEF2F2;border:1.5px solid #FECACA}
-.vs-c.good{background:var(--gl);border:1.5px solid #86EFAC}
-.vs-c .vi{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.prob-uline{width:44px;height:4px;background:var(--o);border-radius:2px;margin:8px 0 24px}
+.prob-feature{display:flex;align-items:flex-start;gap:16px;margin-top:16px;padding:18px 20px;background:var(--wg);border-radius:var(--r)}
+.prob-ficon{width:48px;height:48px;min-width:48px;background:var(--op);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;line-height:1}
+.prob-ftext{font-size:.93rem;color:var(--mu)}
+.prob-ftext p{margin-bottom:8px!important}
+.prob-ftext p:last-child{margin-bottom:0!important}
+.prob-ftext strong{color:var(--ch);font-weight:700}
+.prob-visual{position:relative}
+.prob-visual::before{content:'';position:absolute;top:50%;right:-70px;transform:translateY(-52%);width:440px;height:440px;background:radial-gradient(circle,rgba(253,186,116,.55) 0%,rgba(251,146,60,.28) 42%,rgba(249,115,22,.06) 68%,transparent 82%);border-radius:50%;pointer-events:none;filter:blur(3px);z-index:0}
+.prob-visual::after{content:'';position:absolute;bottom:10px;left:10px;width:130px;height:130px;background-image:radial-gradient(circle,rgba(249,115,22,.28) 1.5px,transparent 1.5px);background-size:14px 14px;pointer-events:none;z-index:0}
+.mock-laptop{background:#e2e2e2;border-radius:14px;box-shadow:0 20px 56px rgba(0,0,0,.16);overflow:hidden;position:relative;z-index:1}
+.mock-bar{background:#d0d0d0;padding:9px 14px;display:flex;align-items:center;gap:6px}
+.mock-dot{width:11px;height:11px;border-radius:50%}
+.mock-dot.r{background:#ff5f57}.mock-dot.y{background:#febc2e}.mock-dot.g{background:#28c840}
+.mock-screen{overflow:hidden;height:268px}
+.mock-screen img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:opacity 0.5s ease}
+.mock-phone{position:absolute;bottom:0;right:-8px;width:112px;background:#1c1c1e;border-radius:22px;box-shadow:0 16px 44px rgba(0,0,0,.32);overflow:hidden;border:4px solid #1c1c1e;z-index:2}
+.mock-pbar{height:18px;background:#1c1c1e;display:flex;justify-content:center;align-items:center}
+.mock-pbar::after{content:'';display:block;width:32px;height:5px;background:#3a3a3a;border-radius:99px}
+.mock-pscreen{overflow:hidden;height:196px}
+.mock-pscreen img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transform:scale(2.1);transform-origin:top left}
 .vs-c h4{font-size:.9rem;font-weight:700;margin-bottom:4px}.vs-c p{font-size:.83rem;margin:0}
 
 /* Philosophy */
@@ -299,7 +376,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 /* CAREERS */
 .car-phero{background:var(--ch);padding:64px 6% 56px;text-align:center}
 .car-phero .sl{background:rgba(249,115,22,.18);color:var(--o);margin-bottom:16px}
-.car-phero h1{font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:12px;line-height:1.2}
+.car-phero h1,.car-phero h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:12px;line-height:1.2}
 .car-phero p{color:rgba(255,255,255,.65);font-size:1rem;max-width:500px;margin:0 auto 28px}
 .car-phero a.email-cta{display:inline-flex;align-items:center;gap:8px;background:var(--o);color:#fff;padding:13px 28px;border-radius:99px;font-weight:700;font-size:.95rem;text-decoration:none;transition:opacity .2s}
 .car-phero a.email-cta:hover{opacity:.88}
@@ -362,6 +439,8 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .phero{padding:52px 6% 60px;clip-path:none}
   .phil-in{text-align:left}
   .prob,.phil{padding:56px 6%}
+  .prob-visual{padding-bottom:70px}
+  .mock-phone{right:0}
   .sb{padding:60px 6%}
   .mp-list{grid-template-columns:1fr !important;overflow:visible}
   .mp-item:nth-child(odd){border-right:none}
@@ -382,6 +461,9 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .hl{padding:28px 0 0}
   .sec{padding:44px 5%}
   .prob,.phil{padding:44px 5%}
+  .prob-visual{padding-bottom:60px}
+  .mock-phone{width:100px;right:4px}
+  .mock-pscreen{height:170px}
   .sb{padding:48px 5%}
   .g2,.sp-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
@@ -403,7 +485,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   .mbg{font-size:.68rem;padding:2px 8px}
   .cfw{padding:20px 16px}
   .cfh h3{font-size:.95rem}
-  .phero h1{font-size:1.45rem}
+  .phero h1,.phero h2{font-size:1.45rem}
   .phero p{font-size:.9rem}
   .phero{padding:44px 5% 52px}
   .wa{width:44px;height:44px;font-size:1.25rem;bottom:14px;right:14px}
@@ -543,25 +625,25 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 
 <!-- NAV -->
 <nav>
-  <div class="logo" onclick="go('home')"><img src="helplaunch_logo.png" alt="HelpLaunch" style="height:96px;width:auto;display:block"></div>
+  <a href="#home" onclick="go('home')" class="logo"><img src="helplaunch_logo.png" alt="HelpLaunch — Website Design and SEO Agency" style="height:96px;width:auto;display:block"></a>
   <div class="nav-right">
     <ul class="nl">
-      <li><a onclick="go('home')" data-p="home" class="active">Home</a></li>
-      <li><a onclick="go('services')" data-p="services">Services</a></li>
-      <li><a onclick="go('how')" data-p="how">How We Work</a></li>
-      <li><a onclick="go('careers')" data-p="careers">Careers</a></li>
-      <li><a onclick="go('contact')" data-p="contact">Contact</a></li>
+      <li><a href="#home" onclick="go('home')" data-p="home" class="active">Home</a></li>
+      <li><a href="#services" onclick="go('services')" data-p="services">Services</a></li>
+      <li><a href="#how" onclick="go('how')" data-p="how">How We Work</a></li>
+      <li><a href="#careers" onclick="go('careers')" data-p="careers">Careers</a></li>
+      <li><a href="#contact" onclick="go('contact')" data-p="contact">Contact</a></li>
     </ul>
     <button class="ncta" onclick="go('contact')">Free Consultation</button>
   </div>
   <button class="hbg" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mnav" id="mnav">
-  <a onclick="go('home');toggleNav()">Home</a>
-  <a onclick="go('services');toggleNav()">Services</a>
-  <a onclick="go('how');toggleNav()">How We Work</a>
-  <a onclick="go('careers');toggleNav()">Careers</a>
-  <a onclick="go('contact');toggleNav()">Contact</a>
+  <a href="#home" onclick="go('home');toggleNav()">Home</a>
+  <a href="#services" onclick="go('services');toggleNav()">Services</a>
+  <a href="#how" onclick="go('how');toggleNav()">How We Work</a>
+  <a href="#careers" onclick="go('careers');toggleNav()">Careers</a>
+  <a href="#contact" onclick="go('contact');toggleNav()">Contact</a>
   <button onclick="go('contact');toggleNav()" class="mc">Get Free Consultation</button>
 </div>
 
@@ -571,9 +653,8 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
     <div class="hero-in">
       <div class="hl fu">
         <div class="eyebrow"><span class="pulse"></span> Websites that actually work</div>
-        <h1>Beautiful Websites. <em class="hi">Better SEO.</em> Exceptional User Experience.</h1>
-        <p class="lead">We design and build high-performance websites, optimise them to rank on Google, and craft user experiences that turn every visitor into a customer.</p>
-        <div class="hbtns">
+        <h1>Your website should be your <em class="hi">best salesperson.</em></h1>
+        <div class="hbtns" style="margin-top:52px">
           <button class="btn bto" onclick="go('contact')">Get a Free Consultation</button>
         </div>
       </div>
@@ -618,15 +699,20 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
       <div class="prob-text fu">
         <span class="sl" style="margin-bottom:16px">The Hard Truth</span>
         <h2>You have a website. But does it <em class="hi">actually work?</em></h2>
-        <blockquote>"Someone searched for exactly what you offer on Google yesterday. They found your competitor because your site loaded in 6 seconds and had no SEO."</blockquote>
+        <div class="prob-uline"></div>
         <p>A beautiful website that nobody finds is a brochure sitting in a drawer. A website that ranks on Google but confuses visitors is a leaky funnel. You need both, and that is exactly what we build.</p>
-        <div class="prob-cta">
-        </div>
       </div>
-      <div class="fu">
-        <div class="vs-c bad"><span class="vi">😟</span><div><h4>Without the right foundation</h4><p>Slow website, zero SEO, confusing UX. Visitors leave in 3 seconds and never come back.</p></div></div>
-        <div class="vs-c good"><span class="vi">🚀</span><div><h4>With HelpLaunch</h4><p>Fast, SEO-optimised website with a clear user journey that turns visitors into enquiries around the clock.</p></div></div>
-        <div class="vs-c good"><span class="vi">📊</span><div><h4>Measurable, not vague</h4><p>Page speed scores, keyword rankings, conversion rates. We track everything and report it clearly every month.</p></div></div>
+      <div class="prob-visual fu">
+        <div class="mock-laptop">
+          <div class="mock-bar">
+            <span class="mock-dot r"></span>
+            <span class="mock-dot y"></span>
+            <span class="mock-dot g"></span>
+          </div>
+          <div class="mock-screen">
+            <img src="medexus-after.png" alt="Medexus website redesigned by HelpLaunch — desktop view" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -674,7 +760,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <div class="phero">
     <div class="inn fu">
       <span class="sl dk" style="margin-bottom:16px">What We Offer</span>
-      <h1>Get found. Get chosen. <em class="hi">Keep growing.</em></h1>
+      <h2>Get found. Get chosen. <em class="hi">Keep growing.</em></h2>
       <p>Every service is done for you, end to end. No technical knowledge required on your part.</p>
     </div>
   </div>
@@ -936,7 +1022,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <div class="phero">
     <div class="inn fu">
       <span class="sl dk" style="margin-bottom:16px">The Process</span>
-      <h1>We audit first. <em class="hi">Then we build.</em></h1>
+      <h2>We audit first. <em class="hi">Then we build.</em></h2>
       <p>We never pitch before we understand your situation. We earn your trust by showing you the problems before we propose any solution.</p>
     </div>
   </div>
@@ -1077,7 +1163,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               <div class="ba-tag before">✕ Before</div>
               <div class="ba-carousel" data-images='["medexus-before.png","medexus-before2.png"]' data-type="before" data-client="Medexus Diagnostics">
                 <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
-                  <img src="medexus-before.png" alt="Medexus Before" loading="lazy">
+                  <img src="medexus-before.png" alt="Medexus website before HelpLaunch redesign — outdated layout" loading="lazy">
                   <span class="ba-zoom">🔍 Click to enlarge</span>
                 </div>
                 <div class="bc-nav">
@@ -1091,7 +1177,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               <div class="ba-tag after">✓ After</div>
               <div class="ba-carousel" data-images='["medexus-after.png","medexus-after2.png?v=2"]' data-type="after" data-client="Medexus Diagnostics">
                 <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
-                  <img src="medexus-after.png" alt="Medexus After" loading="lazy">
+                  <img src="medexus-after.png" alt="Medexus website after HelpLaunch redesign — modern, high-converting layout" loading="lazy">
                   <span class="ba-zoom">🔍 Click to enlarge</span>
                 </div>
                 <div class="bc-nav">
@@ -1128,7 +1214,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               <div class="ba-tag before">✕ Before</div>
               <div class="ba-carousel" data-images='["mecindia-before.png","mecindia-before2.png"]' data-type="before" data-client="MEC India">
                 <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
-                  <img src="mecindia-before.png" alt="MEC India Before" loading="lazy">
+                  <img src="mecindia-before.png" alt="MEC India website before HelpLaunch redesign — outdated layout" loading="lazy">
                   <span class="ba-zoom">🔍 Click to enlarge</span>
                 </div>
                 <div class="bc-nav">
@@ -1142,7 +1228,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
               <div class="ba-tag after">✓ After</div>
               <div class="ba-carousel" data-images='["mecindia-after1.png","mecindia-after2.png"]' data-type="after" data-client="MEC India">
                 <div class="ba-img-wrap" onclick="openCarouselLbx(this.closest('.ba-carousel'))">
-                  <img src="mecindia-after1.png" alt="MEC India After" loading="lazy">
+                  <img src="mecindia-after1.png" alt="MEC India website after HelpLaunch redesign — clean, modern, mobile-first" loading="lazy">
                   <span class="ba-zoom">🔍 Click to enlarge</span>
                 </div>
                 <div class="bc-nav">
@@ -1221,7 +1307,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <div class="phero">
     <div class="inn fu">
       <span class="sl dk" style="margin-bottom:16px">Get In Touch</span>
-      <h1>Let's talk about <em class="hi">your website.</em></h1>
+      <h2>Let's talk about <em class="hi">your website.</em></h2>
       <p>Start with a free audit or book a 30-minute call. No jargon, no pressure and no hard sell.</p>
     </div>
   </div>
@@ -1277,7 +1363,7 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
   <div class="car-phero">
     <div class="inn">
       <span class="sl">We Are Hiring</span>
-      <h1>Join HelpLaunch.<br>Grow with us.</h1>
+      <h2>Join HelpLaunch.<br>Grow with us.</h2>
       <p>We're a small, ambitious team helping Indian businesses win online. If you're hungry, driven, and want real-world experience — we'd love to hear from you.</p>
       <a href="mailto:info@helplaunch.in" class="email-cta">📧 info@helplaunch.in</a>
     </div>
@@ -1381,33 +1467,33 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 <footer>
   <div class="fg-grid inn">
     <div class="fb">
-      <div class="logo" onclick="go('home')" style="margin-bottom:12px"><img src="helplaunch_logo_footer.png" alt="HelpLaunch" style="height:160px;width:auto;display:block"></div>
+      <a href="#home" onclick="go('home')" style="display:inline-block;margin-bottom:12px"><img src="helplaunch_logo_footer.png" alt="HelpLaunch — Website Design, SEO and UX Agency" style="height:160px;width:auto;display:block"></a>
       <p>We design high-performance websites, optimise them for search, and craft user experiences that convert visitors into customers.</p>
     </div>
     <div class="fc">
       <h5>Active Services</h5>
       <ul>
-        <li><a onclick="go('services')">Website Design</a></li>
-        <li><a onclick="go('services')">UX and UI Optimisation</a></li>
-        <li><a onclick="go('services')">SEO</a></li>
-        <li><a onclick="go('services')">Online Reputation</a></li>
-        <li><a onclick="go('services')">Analytics Dashboard</a></li>
+        <li><a href="#services" onclick="go('services')">Website Design</a></li>
+        <li><a href="#services" onclick="go('services')">UX and UI Optimisation</a></li>
+        <li><a href="#services" onclick="go('services')">SEO</a></li>
+        <li><a href="#services" onclick="go('services')">Online Reputation</a></li>
+        <li><a href="#services" onclick="go('services')">Analytics Dashboard</a></li>
       </ul>
     </div>
     <div class="fc">
       <h5>More Services</h5>
       <ul>
-        <li><a onclick="go('services')">CRM Setup</a></li>
-        <li><a onclick="go('services')">Content Marketing</a></li>
-        <li><a onclick="go('services')">Google Business Profile</a></li>
+        <li><a href="#services" onclick="go('services')">CRM Setup</a></li>
+        <li><a href="#services" onclick="go('services')">Content Marketing</a></li>
+        <li><a href="#services" onclick="go('services')">Google Business Profile</a></li>
       </ul>
     </div>
     <div class="fc">
       <h5>Company</h5>
       <ul>
-        <li><a onclick="go('how')">How We Work</a></li>
-        <li><a onclick="go('careers')">Careers</a></li>
-        <li><a onclick="go('contact')">Contact</a></li>
+        <li><a href="#how" onclick="go('how')">How We Work</a></li>
+        <li><a href="#careers" onclick="go('careers')">Careers</a></li>
+        <li><a href="#contact" onclick="go('contact')">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -1417,6 +1503,13 @@ footer{background:var(--ch);color:rgba(255,255,255,.6);padding:64px 6% 32px}
 </footer>
 
 <script>
+const pageMeta={
+  home:{title:'HelpLaunch — Website Design, SEO & UX Optimisation for Growing Indian Businesses',desc:'HelpLaunch builds high-performance websites, drives SEO growth, and optimises UX for small and medium businesses across India. Get your free website audit today.',url:'https://www.helplaunch.in/'},
+  services:{title:'Our Services — Website Design, SEO & UX | HelpLaunch',desc:'Explore HelpLaunch services: custom website design, SEO, UX optimisation, Google Business Profile, online reputation management, and analytics dashboards.',url:'https://www.helplaunch.in/#services'},
+  how:{title:'How We Work — Audit-First Digital Growth | HelpLaunch',desc:'We audit your website before we pitch. Discover our transparent, step-by-step process from free audit to live site in 7 working days.',url:'https://www.helplaunch.in/#how'},
+  contact:{title:'Contact HelpLaunch — Get a Free Website Audit',desc:'Get in touch with HelpLaunch. We offer a free website audit and 30-minute consultation. No jargon, no pressure. Reach us at info@helplaunch.in.',url:'https://www.helplaunch.in/#contact'},
+  careers:{title:'Careers at HelpLaunch — Business Development Intern (Sales)',desc:'Join HelpLaunch as a Business Development Intern. Real-world experience, fast-growing team, and a chance to shape the future of digital growth in India.',url:'https://www.helplaunch.in/#careers'}
+};
 function go(p, updateHistory){
   if(!document.getElementById('page-'+p)) return;
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
@@ -1427,6 +1520,13 @@ function go(p, updateHistory){
   window.scrollTo({top:0,behavior:'smooth'});
   document.querySelectorAll('#page-'+p+' .fu:not(.in)').forEach(el=>obs.observe(el));
   if(updateHistory!==false) history.pushState(null,'','#'+p);
+  // Update meta for SEO / sharing
+  const m=pageMeta[p]||pageMeta.home;
+  document.title=m.title;
+  const og=document.getElementById('og-title'); if(og) og.content=m.title;
+  const od=document.getElementById('og-desc'); if(od) od.content=m.desc;
+  const ou=document.getElementById('og-url'); if(ou) ou.content=m.url;
+  const cn=document.getElementById('canonical-tag'); if(cn) cn.href=m.url;
 }
 function toggleNav(){
   document.getElementById('mnav').classList.toggle('open');
@@ -1543,6 +1643,28 @@ bcInit();
     },150);
   }
 })();
+// Laptop mockup auto-scroller
+(function(){
+  const slides=[
+    {src:'medexus-after.png',   pos:'top left'},
+    {src:'mecindia-after1.png', pos:'center left'},
+    {src:'mecindia-after2.png', pos:'top left'},
+    {src:'vedaang_homepage.png',pos:'top left'}
+  ];
+  let idx=0;
+  const img=document.querySelector('.mock-screen img');
+  if(!img) return;
+  setInterval(function(){
+    img.style.opacity='0';
+    setTimeout(function(){
+      idx=(idx+1)%slides.length;
+      img.src=slides[idx].src;
+      img.style.objectPosition=slides[idx].pos;
+      img.style.opacity='1';
+    },500);
+  },2500);
+})();
+
 window.addEventListener('popstate',function(){
   const h=window.location.hash.slice(1);
   go(h||'home',false);
